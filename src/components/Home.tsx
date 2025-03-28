@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Icons } from "../helpers/Icon";
 import { Link } from "react-router-dom";
+import clsx from "clsx";
 
 const Home = () => {
 	const fadeIn = {
@@ -9,6 +10,16 @@ const Home = () => {
 		transition: { duration: 0.6 },
 	};
 
+	const bgFromMap: Record<string, string> = {
+		orange: "from-orange-50",
+		blue: "from-blue-50",
+		yellow: "from-yellow-50",
+		cyan: "from-cyan-50",
+		green: "from-green-50",
+		gray: "from-gray-50",
+		teal: "from-teal-50",
+		black: "from-zinc-200",
+	};
 	const technologies = [
 		{
 			name: "HTML",
@@ -86,7 +97,7 @@ const Home = () => {
 		<div className="pt-16">
 			{/* Hero Section with Profile */}
 			<motion.section
-				className="py-20 px-4 bg-gradient-to-br from-blue-600 via-blue-700 to-purple-800"
+				className="py-32 px-4 bg-gradient-to-br from-blue-600 via-blue-700 to-purple-800"
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				transition={{ duration: 0.8 }}
@@ -124,52 +135,6 @@ const Home = () => {
 				</div>
 			</motion.section>
 
-			{/* Skills Section */}
-			<motion.section
-				className="py-20 bg-gradient-to-b from-white to-blue-50"
-				initial={{ opacity: 0 }}
-				animate={{ opacity: 1 }}
-				transition={{ delay: 0.4 }}
-			>
-				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-					<h2 className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
-						Technologies
-					</h2>
-					<p className="text-center text-zinc-600 mb-12">
-						Mon expertise technique au service de vos projets
-					</p>
-					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-						{technologies.map((tech, index) => (
-							<motion.div
-								key={tech.name}
-								className="bg-white border border-zinc-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
-								initial={{ opacity: 0, y: 20 }}
-								animate={{ opacity: 1, y: 0 }}
-								transition={{ delay: index * 0.1 }}
-								whileHover={{ y: -5, scale: 1.02 }}
-							>
-								<div
-									className={`p-6 bg-gradient-to-br from-${tech.color}-50 to-white`}
-								>
-									<div className="flex items-center justify-between mb-4">
-										{tech.icon}
-										<span className="text-sm font-medium text-zinc-500">
-											{tech.experience}
-										</span>
-									</div>
-									<h3 className="text-xl font-bold mb-2">
-										{tech.name}
-									</h3>
-									<p className="text-zinc-600">
-										{tech.description}
-									</p>
-								</div>
-							</motion.div>
-						))}
-					</div>
-				</div>
-			</motion.section>
-
 			{/* Services Section */}
 			<motion.section
 				className="py-20 bg-gradient-to-b from-blue-50 to-purple-50"
@@ -178,7 +143,7 @@ const Home = () => {
 				transition={{ delay: 0.6 }}
 			>
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-					<h2 className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
+					<h2 className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
 						Services
 					</h2>
 					<p className="text-center text-zinc-600 mb-12">
@@ -268,9 +233,63 @@ const Home = () => {
 				</div>
 			</motion.section>
 
+			{/* Skills Section */}
+			<motion.section
+				className="py-20 bg-gradient-to-b from-purple-50 to-blue-50"
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ delay: 0.4 }}
+			>
+				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+					<h2 className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
+						Technologies
+					</h2>
+					<p className="text-center text-zinc-600 mb-12">
+						Mon expertise technique au service de vos projets
+					</p>
+					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+						{technologies.map((tech, index) => {
+							const fromClass =
+								bgFromMap[tech.color] ?? "from-zinc-100"; // fallback safe
+
+							return (
+								<motion.div
+									key={tech.name}
+									className="bg-white border border-zinc-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+									initial={{ opacity: 0, y: 20 }}
+									animate={{ opacity: 1, y: 0 }}
+									transition={{ delay: index * 0.1 }}
+									whileHover={{ y: -5, scale: 1.02 }}
+								>
+									<div
+										className={clsx(
+											"p-6 bg-gradient-to-br to-white",
+											fromClass
+										)}
+									>
+										<div className="flex items-center justify-between mb-4">
+											{tech.icon}
+											<span className="text-sm font-medium text-zinc-500">
+												{tech.experience}
+											</span>
+										</div>
+										<h3 className="text-xl font-bold mb-2">
+											{tech.name}
+										</h3>
+										<p className="text-zinc-600">
+											{tech.description}
+										</p>
+									</div>
+								</motion.div>
+							);
+						})}
+					</div>
+				</div>
+			</motion.section>
+
 			{/* Teaching Section */}
 			<motion.section
-				className="py-20 bg-gradient-to-br from-purple-50 via-blue-50 to-purple-50"
+				className="py-20 bg-gradient-to-b from-blue-50 via-purple-50 to-purple-50"
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				transition={{ delay: 0.8 }}

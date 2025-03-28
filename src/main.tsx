@@ -7,6 +7,7 @@ import Pricing from "./components/Pricing.tsx";
 import Home from "./components/Home.tsx";
 import "./index.css";
 import Contact from "./components/Contact.tsx";
+import NotFound from "./components/NotFound.tsx";
 
 const router = createBrowserRouter([
 	{
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
 				element: <Contact />,
 			},
 		],
+	},
+	{
+		path: "*",
+		element: <NotFound />,
 	},
 ]);
 
