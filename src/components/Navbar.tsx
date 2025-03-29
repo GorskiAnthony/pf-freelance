@@ -77,18 +77,15 @@ const Navbar = () => {
 					className="md:hidden"
 				>
 					<div className="px-2 pt-2 pb-3 space-y-1 bg-white border-b border-zinc-200">
-						<Link
-							to="/"
-							className="block px-3 py-2 text-zinc-600 hover:text-zinc-900"
-						>
-							Home
-						</Link>
-						<Link
-							to="/pricing"
-							className="block px-3 py-2 text-zinc-600 hover:text-zinc-900"
-						>
-							Pricing
-						</Link>
+						{navbar.map((item, index) => (
+							<Link
+								key={index}
+								to={item.link}
+								className="block px-3 py-2 text-zinc-600 hover:text-zinc-900"
+							>
+								{item.name}
+							</Link>
+						))}
 					</div>
 				</motion.div>
 			)}
