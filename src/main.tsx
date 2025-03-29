@@ -9,6 +9,8 @@ import "./index.css";
 import Contact from "./components/Contact.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import MentionsLegales from "./pages/MentionLegal.tsx";
+import Cgv from "./pages/CGV.tsx";
+import { PolitiqueConfidentialite } from "./pages/PolitiqueConfidentialite.tsx";
 
 const router = createBrowserRouter([
 	{
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
 			{
 				path: "/mentions-legales",
 				element: <MentionsLegales />,
+			},
+			{
+				path: "/cgv",
+				element: <Cgv />,
+			},
+			{
+				path: "/politique-confidentialite",
+				element: <PolitiqueConfidentialite />,
 			},
 		],
 	},

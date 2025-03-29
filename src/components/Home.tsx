@@ -4,7 +4,7 @@ import { IconsSkills } from "../helpers/Icon";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
 
-const Home = () => {
+export default function Home() {
 	const fadeIn = {
 		initial: { opacity: 0, y: 20 },
 		animate: { opacity: 1, y: 0 },
@@ -127,7 +127,13 @@ const Home = () => {
 						>
 							<p>Bonjour 👋</p>
 							Je suis{" "}
-							<span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 to-cyan-400">
+							<span
+								className="text-transparent bg-clip-text 
+             bg-gradient-to-r 
+             from-yellow-400 via-pink-500 via-cyan-500 to-green-500 
+             bg-[length:200%_200%] 
+             animate-gradient-x"
+							>
 								Anthony Gorski
 							</span>{" "}
 							<br /> Sofware developpeur
@@ -414,6 +420,4 @@ const Home = () => {
 			</motion.section>
 		</div>
 	);
-};
-
-export default Home;
+}

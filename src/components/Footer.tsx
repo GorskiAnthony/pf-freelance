@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Icons } from "../helpers/Icon";
-
-const Footer = () => {
+export default function Footer() {
 	return (
 		<footer className="bg-zinc-900 text-white py-12">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -79,26 +78,32 @@ const Footer = () => {
 							<li>
 								<Link
 									to="/mentions-legales"
+									rel="noopener noreferrer"
+									aria-label="Mentions légales"
 									className="hover:text-zinc-300 transition-colors"
 								>
 									Mentions légales
 								</Link>
 							</li>
 							<li>
-								<a
-									href="#"
+								<Link
+									to="/politique-confidentialite"
+									rel="noopener noreferrer"
+									aria-label="Politique de confidentialité"
 									className="hover:text-zinc-300 transition-colors"
 								>
 									Politique de confidentialité
-								</a>
+								</Link>
 							</li>
 							<li>
-								<a
-									href="#"
+								<Link
+									to="/cgv"
+									rel="noopener noreferrer"
+									aria-label="CGV"
 									className="hover:text-zinc-300 transition-colors"
 								>
 									CGV
-								</a>
+								</Link>
 							</li>
 						</ul>
 					</div>
@@ -113,6 +118,4 @@ const Footer = () => {
 			</div>
 		</footer>
 	);
-};
-
-export default Footer;
+}
