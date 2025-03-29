@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Icons } from "../helpers/Icon";
 
 const Footer = () => {
@@ -20,7 +21,7 @@ const Footer = () => {
 							<li className="flex items-center">
 								<Icons.Github className="w-5 h-5 mr-2" />
 								<a
-									href="https://github.com"
+									href="https://github.com/GorskiAnthony"
 									target="_blank"
 									rel="noopener noreferrer"
 									className="hover:text-zinc-300 transition-colors"
@@ -31,7 +32,7 @@ const Footer = () => {
 							<li className="flex items-center">
 								<Icons.Linkedin className="w-5 h-5 mr-2" />
 								<a
-									href="https://linkedin.com"
+									href="https://www.linkedin.com/in/anthony-gorski/"
 									target="_blank"
 									rel="noopener noreferrer"
 									className="hover:text-zinc-300 transition-colors"
@@ -76,12 +77,12 @@ const Footer = () => {
 						<h3 className="text-xl font-bold mb-4">Légal</h3>
 						<ul className="space-y-2">
 							<li>
-								<a
-									href="#"
+								<Link
+									to="/mentions-legales"
 									className="hover:text-zinc-300 transition-colors"
 								>
 									Mentions légales
-								</a>
+								</Link>
 							</li>
 							<li>
 								<a

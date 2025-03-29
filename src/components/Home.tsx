@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Icons } from "../helpers/Icon";
+import { IconsSkills } from "../helpers/Icon";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
 
@@ -16,79 +17,95 @@ const Home = () => {
 		yellow: "from-yellow-50",
 		cyan: "from-cyan-50",
 		green: "from-green-50",
-		gray: "from-gray-50",
+		gray: "from-gray-100",
 		teal: "from-teal-50",
-		black: "from-zinc-200",
+		black: "from-zinc-100",
 	};
 	const technologies = [
 		{
 			name: "HTML",
-			icon: <Icons.Layout className="w-12 h-12 mb-4 text-orange-600" />,
+			icon: (
+				<IconsSkills.Html className="w-12 h-12 mb-4 text-orange-600" />
+			),
 			description: "Structure sémantique et accessible",
 			experience: "10+ ans d'expérience",
 			color: "orange",
 		},
 		{
 			name: "CSS",
-			icon: <Icons.Layout className="w-12 h-12 mb-4 text-blue-500" />,
+			icon: <IconsSkills.Css className="w-12 h-12 mb-4 text-blue-500" />,
 			description: "Styles modernes et responsive design",
 			experience: "10+ ans d'expérience",
 			color: "blue",
 		},
 		{
 			name: "JavaScript",
-			icon: <Icons.Code2 className="w-12 h-12 mb-4 text-yellow-500" />,
+			icon: (
+				<IconsSkills.Javascript className="w-12 h-12 mb-4 text-yellow-500" />
+			),
 			description: "Développement frontend dynamique",
 			experience: "8+ ans d'expérience",
 			color: "yellow",
 		},
 		{
 			name: "TypeScript",
-			icon: <Icons.FileJson className="w-12 h-12 mb-4 text-blue-600" />,
-			description: "Code typé et maintenable",
+			icon: (
+				<IconsSkills.Typescript className="w-12 h-12 mb-4 text-blue-600" />
+			),
+			description: "Typage statique pour JavaScript moderne",
 			experience: "5+ ans d'expérience",
 			color: "blue",
 		},
 		{
 			name: "React",
-			icon: <Icons.Code2 className="w-12 h-12 mb-4 text-cyan-500" />,
+			icon: (
+				<IconsSkills.React className="w-12 h-12 mb-4 text-cyan-500" />
+			),
 			description: "Applications web interactives",
 			experience: "8+ ans d'expérience",
 			color: "cyan",
 		},
 		{
 			name: "NodeJS",
-			icon: <Icons.Server className="w-12 h-12 mb-4 text-green-600" />,
+			icon: (
+				<IconsSkills.Node className="w-12 h-12 mb-4 text-green-600" />
+			),
 			description: "Backend JavaScript performant",
 			experience: "8+ ans d'expérience",
 			color: "green",
 		},
 		{
 			name: "ExpressJS",
-			icon: <Icons.Server className="w-12 h-12 mb-4 text-gray-600" />,
+			icon: (
+				<IconsSkills.Express className="w-12 h-12 mb-4 text-gray-600" />
+			),
 			description: "APIs REST et serveurs web",
 			experience: "8+ ans d'expérience",
 			color: "gray",
 		},
 		{
 			name: "Tailwind",
-			icon: <Icons.Wind className="w-12 h-12 mb-4 text-teal-500" />,
+			icon: (
+				<IconsSkills.Tailwind className="w-12 h-12 mb-4 text-teal-500" />
+			),
 			description: "Styles utilitaires modernes",
 			experience: "4+ ans d'expérience",
 			color: "teal",
 		},
 		{
 			name: "Docker",
-			icon: <Icons.Database className="w-12 h-12 mb-4 text-blue-700" />,
+			icon: (
+				<IconsSkills.Docker className="w-12 h-12 mb-4 text-blue-700" />
+			),
 			description: "Conteneurisation et déploiement",
 			experience: "2+ ans d'expérience",
 			color: "blue",
 		},
 		{
 			name: "Symfony",
-			icon: <Icons.Code2 className="w-12 h-12 mb-4 text-black" />,
-			description: "Framework PHP robuste",
-			experience: "5+ ans d'expérience",
+			icon: <IconsSkills.Symfony className="w-12 h-12 mb-4 text-black" />,
+			description: "Famework PHP robuste et flexible",
+			experience: "6+ ans d'expérience",
 			color: "black",
 		},
 	];
@@ -108,14 +125,20 @@ const Home = () => {
 							className="text-5xl font-bold text-white mb-6"
 							{...fadeIn}
 						>
-							Développeur Full Stack
+							<p>Bonjour 👋</p>
+							Je suis{" "}
+							<span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 to-cyan-400">
+								Anthony Gorski
+							</span>{" "}
+							<br /> Sofware developpeur
 						</motion.h1>
 						<motion.p
 							className="text-xl text-blue-100"
 							{...fadeIn}
 							transition={{ delay: 0.2 }}
 						>
-							Création d'applications web modernes et performantes
+							Je développe avec vous des solutions web modernes et
+							performantes.
 						</motion.p>
 					</div>
 					<motion.div
@@ -144,7 +167,7 @@ const Home = () => {
 			>
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<h2 className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
-						Services
+						Mes Services
 					</h2>
 					<p className="text-center text-zinc-600 mb-12">
 						Des solutions adaptées à vos besoins

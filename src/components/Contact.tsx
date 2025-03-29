@@ -1,16 +1,27 @@
+import { motion } from "framer-motion";
 import {
 	BuildingOffice2Icon,
 	EnvelopeIcon,
 	PhoneIcon,
 } from "@heroicons/react/24/outline";
 
-export default function Example() {
+export default function Contact() {
+	const fadeIn = {
+		initial: { opacity: 0, y: 20 },
+		animate: { opacity: 1, y: 0 },
+		transition: { duration: 0.6 },
+	};
 	return (
-		<div className="relative isolate bg-white">
+		<motion.section
+			className="relative isolate bg-white"
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			transition={{ duration: 0.8 }}
+		>
 			<div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
 				<div className="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48">
 					<div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
-						<div className="absolute inset-y-0 left-0 -z-10 w-full overflow-hidden bg-gray-100 ring-1 ring-gray-900/10 lg:w-1/2">
+						<motion.div className="absolute inset-y-0 left-0 -z-10 w-full overflow-hidden bg-gray-100 ring-1 ring-gray-900/10 lg:w-1/2">
 							<svg
 								aria-hidden="true"
 								className="absolute inset-0 size-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
@@ -53,17 +64,29 @@ export default function Example() {
 									strokeWidth={0}
 								/>
 							</svg>
-						</div>
-						<h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+						</motion.div>
+						<motion.h2
+							className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl"
+							{...fadeIn}
+							transition={{ delay: 0.2 }}
+						>
 							Contactez-nous
-						</h2>
-						<p className="mt-6 text-lg/8 text-gray-600">
+						</motion.h2>
+						<motion.p
+							className="mt-6 text-lg/8 text-gray-600"
+							{...fadeIn}
+							transition={{ delay: 0.4 }}
+						>
 							Nous sommes là pour vous aider. Si vous avez des
 							questions ou des préoccupations, n'hésitez pas à
 							nous contacter. Nous nous engageons à vous répondre
 							dans les plus brefs délais.
-						</p>
-						<dl className="mt-10 space-y-4 text-base/7 text-gray-600">
+						</motion.p>
+						<motion.dl
+							className="mt-10 space-y-4 text-base/7 text-gray-600"
+							{...fadeIn}
+							transition={{ delay: 0.6 }}
+						>
 							<div className="flex gap-x-4">
 								<dt className="flex-none">
 									<span className="sr-only">Address</span>
@@ -116,7 +139,7 @@ export default function Example() {
 									</a>
 								</dd>
 							</div>
-						</dl>
+						</motion.dl>
 					</div>
 				</div>
 				<form
@@ -223,6 +246,6 @@ export default function Example() {
 					</div>
 				</form>
 			</div>
-		</div>
+		</motion.section>
 	);
 }
