@@ -1,11 +1,40 @@
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import {
 	BuildingOffice2Icon,
 	EnvelopeIcon,
 	PhoneIcon,
 } from "@heroicons/react/24/outline";
+import { toast } from "react-toastify";
 
 export default function Contact() {
+	const form = useRef<HTMLFormElement | null>(null);
+
+	const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+
+		toast
+			.promise(
+				emailjs.sendForm(
+					import.meta.env.VITE_EMAILJS_SERVICE_ID as string,
+					import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string,
+					form.current!,
+					import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string
+				),
+				{
+					pending: "⏳ Envoi du message...",
+					success: "Message envoyé avec succès !",
+					error: "Une erreur est survenue, réessayez.",
+				}
+			)
+			.then(() => {
+				if (form.current) {
+					form.current.reset();
+				}
+			});
+	};
+
 	const fadeIn = {
 		initial: { opacity: 0, y: 20 },
 		animate: { opacity: 1, y: 0 },
@@ -143,8 +172,8 @@ export default function Contact() {
 					</div>
 				</div>
 				<form
-					action="#"
-					method="POST"
+					ref={form}
+					onSubmit={sendEmail}
 					className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48"
 				>
 					<div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
@@ -161,6 +190,7 @@ export default function Contact() {
 										id="first-name"
 										name="first-name"
 										type="text"
+										required
 										autoComplete="given-name"
 										className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
 									/>
@@ -178,6 +208,7 @@ export default function Contact() {
 										id="last-name"
 										name="last-name"
 										type="text"
+										required
 										autoComplete="family-name"
 										className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
 									/>
@@ -195,6 +226,7 @@ export default function Contact() {
 										id="email"
 										name="email"
 										type="email"
+										required
 										autoComplete="email"
 										className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
 									/>
@@ -229,8 +261,8 @@ export default function Contact() {
 										id="message"
 										name="message"
 										rows={4}
+										required
 										className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-										defaultValue={""}
 									/>
 								</div>
 							</div>

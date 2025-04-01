@@ -1,6 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 import Layout from "./pages/Layout.tsx";
 import Pricing from "./components/Pricing.tsx";
@@ -60,5 +61,15 @@ if (rootElement == null) {
 createRoot(rootElement).render(
 	<StrictMode>
 		<RouterProvider router={router} />
+		<ToastContainer
+			position="top-right"
+			autoClose={3000}
+			hideProgressBar={false}
+			newestOnTop
+			closeOnClick
+			pauseOnHover
+			draggable
+			theme="colored"
+		/>
 	</StrictMode>
 );
