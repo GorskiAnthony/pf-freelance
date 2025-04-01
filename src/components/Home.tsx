@@ -136,7 +136,7 @@ export default function Home() {
 							>
 								Anthony Gorski
 							</span>{" "}
-							<br /> Sofware developpeur
+							<br /> Software developpeur
 						</motion.h1>
 						<motion.p
 							className="text-xl text-blue-100"
