@@ -66,7 +66,7 @@ export default function ConditionsVente() {
 		{
 			title: "8. Données personnelles",
 			content:
-				"Les données collectées servent uniquement à la gestion de la prestation. Elles ne sont jamais cédées à des tiers. Conformément à la loi RGPD, vous pouvez demander la modification ou suppression de vos données en écrivant à contact@agorski.dev.",
+				"Les données collectées servent uniquement à la gestion de la prestation. Elles ne sont jamais cédées à des tiers. Conformément à la loi RGPD, vous pouvez demander la modification ou suppression de vos données en écrivant à anthony.developpeurweb@gmail.com.",
 		},
 		{
 			title: "9. Litiges",

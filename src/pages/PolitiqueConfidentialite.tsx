@@ -84,11 +84,11 @@ export const PolitiqueConfidentialite = () => {
 						Pour exercer ces droits, vous pouvez contacter Anthony
 						Gorski par email à l’adresse :
 						<a
-							href="mailto:contact@agorski.dev"
+							href="mailto:anthony.developpeurweb@gmail.com"
 							className="text-blue-600 underline"
 						>
 							{" "}
-							contact@agorski.dev
+							anthony.developpeurweb@gmail.com
 						</a>
 					</p>
 				</>

@@ -130,12 +130,12 @@ export default function Contact() {
 								</dt>
 								<dd>
 									<a
-										href="mailto:hello@example.com"
+										href="mailto:anthony.developpeurweb@gmail.com"
 										className="hover:text-gray-900"
 										rel="noopener noreferrer"
 										aria-label="Email address"
 									>
-										hello@example.com
+										anthony.developpeurweb@gmail.com
 									</a>
 								</dd>
 							</div>

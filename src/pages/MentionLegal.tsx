@@ -28,7 +28,7 @@ export default function MentionsLegales() {
 		{
 			title: "7. Données personnelles",
 			content:
-				"Le site peut collecter des données personnelles via les formulaires de contact (nom, prénom, email…). Ces données sont strictement confidentielles et ne sont utilisées que pour répondre aux demandes. Conformément à la loi 'Informatique et Libertés' et au RGPD, tout utilisateur dispose d’un droit d’accès, de rectification ou de suppression des données le concernant, en écrivant à : contact@agorski.dev. Aucune information personnelle n’est cédée à des tiers.",
+				"Le site peut collecter des données personnelles via les formulaires de contact (nom, prénom, email…). Ces données sont strictement confidentielles et ne sont utilisées que pour répondre aux demandes. Conformément à la loi 'Informatique et Libertés' et au RGPD, tout utilisateur dispose d’un droit d’accès, de rectification ou de suppression des données le concernant, en écrivant à : anthony.developpeurweb@gmail.com. Aucune information personnelle n’est cédée à des tiers.",
 		},
 		{
 			title: "8. Cookies",
