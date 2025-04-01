@@ -66,10 +66,10 @@ export default function MentionsLegales() {
 					<br />
 					Contact :{" "}
 					<a
-						href="mailto:ton-email@email.com"
+						href="mailto:anthony.developpeurweb@gmail.com"
 						className="text-blue-600 underline"
 					>
-						ton-email@email.com
+						anthony.developpeurweb@gmail.com
 					</a>
 					<br />
 					Site :{" "}
