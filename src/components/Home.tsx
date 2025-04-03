@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Icons } from "../helpers/Icon";
 import { IconsSkills } from "../helpers/Icon";
-import { Link } from "react-router-dom";
+import { payer } from "../utils/payer";
 import clsx from "clsx";
 
 export default function Home() {
@@ -343,6 +343,7 @@ export default function Home() {
 								</p>
 
 								<div className="mb-8 space-y-6">
+									{/* Offre Cours individuel */}
 									<div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-lg">
 										<h3 className="text-xl font-semibold mb-2">
 											Cours individuel
@@ -357,8 +358,15 @@ export default function Home() {
 											Formation personnalisée et adaptée à
 											votre rythme
 										</p>
+										<button
+											onClick={() => payer("cours_1h")}
+											className="mt-4 w-full inline-block text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
+										>
+											Réserver ce cours
+										</button>
 									</div>
 
+									{/* Offre Pack 5 cours */}
 									<div className="bg-gradient-to-r from-purple-50 to-blue-50 p-6 rounded-lg border-2 border-blue-200 relative">
 										<div className="absolute -top-3 right-4 bg-blue-600 text-white px-4 py-1 rounded-full text-sm">
 											Meilleure offre
@@ -375,9 +383,14 @@ export default function Home() {
 										<p className="text-zinc-600">
 											Économisez 50€ sur votre formation
 										</p>
+										<button
+											onClick={() => payer("cours_5h")}
+											className="mt-4 w-full inline-block text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
+										>
+											Réserver ce pack
+										</button>
 									</div>
 								</div>
-
 								<ul className="space-y-4 mb-8">
 									<li className="flex items-center text-zinc-700">
 										<div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
@@ -397,12 +410,6 @@ export default function Home() {
 										Suivi personnalisé
 									</li>
 								</ul>
-								<Link
-									to="/contact"
-									className="w-full inline-block text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
-								>
-									Réserver un cours
-								</Link>
 							</motion.div>
 						</div>
 						<div className="md:w-1/2">

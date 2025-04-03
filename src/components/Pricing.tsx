@@ -37,8 +37,8 @@ const tiers = [
 		id: "tier-startup",
 		href: "#",
 		price: {
-			monthly: { label: "€29", id: "freelancer_monthly" },
-			annually: { label: "€299", id: "freelancer_yearly" },
+			monthly: { label: "€29", id: "startup_monthly" },
+			annually: { label: "€299", id: "startup_yearly" },
 		},
 		description:
 			"Un plan qui s'adapte à la croissance rapide de votre entreprise.",
