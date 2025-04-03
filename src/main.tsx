@@ -12,6 +12,8 @@ import NotFound from "./pages/NotFound.tsx";
 import MentionsLegales from "./pages/MentionLegal.tsx";
 import Cgv from "./pages/CGV.tsx";
 import { PolitiqueConfidentialite } from "./pages/PolitiqueConfidentialite.tsx";
+import Success from "./pages/Success.tsx";
+import Cancel from "./pages/Cancel.tsx";
 
 const router = createBrowserRouter([
 	{
@@ -41,6 +43,14 @@ const router = createBrowserRouter([
 			{
 				path: "/politique-confidentialite",
 				element: <PolitiqueConfidentialite />,
+			},
+			{
+				path: "/success",
+				element: <Success />,
+			},
+			{
+				path: "/cancel",
+				element: <Cancel />,
 			},
 		],
 	},
