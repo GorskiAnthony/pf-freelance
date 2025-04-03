@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Radio, RadioGroup } from "@headlessui/react";
 import { CheckIcon } from "@heroicons/react/20/solid";
+import { payer } from "../utils/payer";
 
 const frequencies: {
 	value: "monthly" | "annually";
@@ -16,7 +17,10 @@ const tiers = [
 		name: "Freelancer",
 		id: "tier-freelancer",
 		href: "#",
-		price: { monthly: "€19", annually: "€199" },
+		price: {
+			monthly: { label: "€19", id: "freelancer_monthly" },
+			annually: { label: "€199", id: "freelancer_yearly" },
+		},
 		description:
 			"L'essentiel pour donner le meilleur de soi à ses clients.",
 		features: [
@@ -32,7 +36,10 @@ const tiers = [
 		name: "Startup",
 		id: "tier-startup",
 		href: "#",
-		price: { monthly: "€29", annually: "€299" },
+		price: {
+			monthly: { label: "€29", id: "freelancer_monthly" },
+			annually: { label: "€299", id: "freelancer_yearly" },
+		},
 		description:
 			"Un plan qui s'adapte à la croissance rapide de votre entreprise.",
 		features: [
@@ -167,7 +174,7 @@ export default function Pricing() {
 									>
 										{typeof tier.price === "string"
 											? tier.price
-											: tier.price[frequency.value]}
+											: tier.price[frequency.value].label}
 									</span>
 									{typeof tier.price !== "string" ? (
 										<span
@@ -182,18 +189,24 @@ export default function Pricing() {
 										</span>
 									) : null}
 								</p>
-								<a
-									href={tier.href}
+								<button
+									onClick={() => {
+										if (typeof tier.price !== "string") {
+											payer(
+												tier.price[frequency.value].id
+											);
+										}
+									}}
 									aria-describedby={tier.id}
 									className={classNames(
 										tier.featured
 											? "bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white"
 											: "bg-indigo-600 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-indigo-600",
-										"mt-6 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+										"mt-6 block w-full rounded-md px-3 py-2 text-center text-sm/6 font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
 									)}
 								>
 									{tier.cta}
-								</a>
+								</button>
 								<ul
 									role="list"
 									className={classNames(
