@@ -177,7 +177,7 @@ export default function Home() {
 			iconBg: "bg-blue-50",
 			title: "SEO & Visibilité",
 			description:
-				"Optimisation pour les moteurs de recherche et amélioration de la visibilité en ligne",
+				"Vos clients vous cherchent sur Google — soyez là où ils regardent. J'optimise votre site pour attirer un trafic qualifié.",
 			img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
 			imgAlt: "SEO",
 			hoverRing: "hover:ring-blue-200",
@@ -187,7 +187,7 @@ export default function Home() {
 			iconBg: "bg-purple-50",
 			title: "Développement & Déploiement",
 			description:
-				"Création et mise en ligne d'applications web performantes",
+				"De l'idée à la mise en production. Je conçois des applications robustes, rapides et prêtes à scaler dès le premier jour.",
 			img: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
 			imgAlt: "Développement",
 			hoverRing: "hover:ring-purple-200",
@@ -197,7 +197,7 @@ export default function Home() {
 			iconBg: "bg-emerald-50",
 			title: "Maintenance & Support",
 			description:
-				"Support technique et maintenance continue de vos applications",
+				"Votre site tourne, ça ne suffit pas. Je veille, je corrige, je mets à jour — pour que vous n'ayez jamais à vous en préoccuper.",
 			img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
 			imgAlt: "Maintenance",
 			hoverRing: "hover:ring-emerald-200",
@@ -207,7 +207,7 @@ export default function Home() {
 			iconBg: "bg-rose-50",
 			title: "Conseil & Accompagnement",
 			description:
-				"Accompagnement stratégique et conseil en solutions digitales",
+				"Pas sûr de la bonne techno ? Besoin d'un œil externe ? Je vous aide à prendre les bonnes décisions, sans jargon inutile.",
 			img: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
 			imgAlt: "Consulting",
 			hoverRing: "hover:ring-rose-200",
@@ -267,7 +267,7 @@ export default function Home() {
 							</span>
 							<br />
 							<span className="text-white/90">
-								Software Développeur
+								Lead Développeur Full-Stack
 							</span>
 						</motion.h1>
 
@@ -277,8 +277,9 @@ export default function Home() {
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ delay: 0.4, duration: 0.6 }}
 						>
-							Je développe avec vous des solutions web modernes et
-							performantes.
+							Je transforme vos idées en produits web qui attirent,
+							convainquent et convertissent — livrés dans les délais,
+							sans mauvaise surprise.
 						</motion.p>
 
 						<motion.div
@@ -292,13 +293,13 @@ export default function Home() {
 								className="relative group overflow-hidden bg-white text-blue-900 px-8 py-4 rounded-xl font-bold text-lg shadow-2xl shadow-black/30 hover:shadow-blue-400/30 hover:-translate-y-1 transition-all duration-300"
 							>
 								<span className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-blue-100/60 to-transparent transition-transform duration-700 ease-in-out" />
-								<span className="relative">Me contacter</span>
+								<span className="relative">Démarrons votre projet →</span>
 							</Link>
 							<Link
 								to="/pricing"
 								className="border-2 border-white/25 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 hover:border-white/50 hover:-translate-y-1 transition-all duration-300 backdrop-blur-sm"
 							>
-								Voir mes tarifs
+								Découvrir les offres →
 							</Link>
 						</motion.div>
 					</div>
@@ -381,7 +382,7 @@ export default function Home() {
 							</span>
 						</h2>
 						<p className="text-zinc-500 text-lg max-w-xl mx-auto">
-							Des solutions adaptées à vos besoins
+							Chaque ligne de code sert un objectif : faire grandir votre activité.
 						</p>
 					</motion.div>
 
@@ -452,7 +453,7 @@ export default function Home() {
 							</span>
 						</h2>
 						<p className="text-zinc-500 text-lg">
-							Mon expertise technique au service de vos projets
+							Des technologies maîtrisées en conditions réelles — pas sur des tutoriels YouTube.
 						</p>
 					</motion.div>
 
@@ -525,9 +526,9 @@ export default function Home() {
 									</span>
 								</h2>
 								<p className="text-zinc-500 leading-relaxed mb-8">
-									Formez-vous aux technologies web modernes
-									avec des cours personnalisés adaptés à votre
-									niveau et vos objectifs.
+									Que vous débutiez ou cherchiez à progresser,
+									je vous aide à passer un cap concret — avec de
+									vrais projets, pas des slides PowerPoint.
 								</p>
 
 								<div className="space-y-5 mb-8">
@@ -545,8 +546,8 @@ export default function Home() {
 											</span>
 										</div>
 										<p className="text-zinc-500 text-sm mb-4">
-											Formation personnalisée et adaptée à
-											votre rythme
+											Concentré sur ce qui vous bloque vraiment,
+											à votre rythme
 										</p>
 										<button
 											onClick={() => payer("cours_1h")}
@@ -554,7 +555,7 @@ export default function Home() {
 										>
 											<span className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 ease-in-out" />
 											<span className="relative z-10">
-												Réserver ce cours
+												Réserver ma première heure →
 											</span>
 										</button>
 									</div>
@@ -578,8 +579,8 @@ export default function Home() {
 												</span>
 											</div>
 											<p className="text-zinc-500 text-sm mb-4">
-												Économisez 50€ sur votre
-												formation
+												5h pour aller de l'idée au projet concret
+												— et 50€ économisés
 											</p>
 											<button
 												onClick={() =>
@@ -589,7 +590,7 @@ export default function Home() {
 											>
 												<span className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 ease-in-out" />
 												<span className="relative z-10">
-													Réserver ce pack
+													Réserver le pack 5h →
 												</span>
 											</button>
 										</div>
@@ -598,10 +599,10 @@ export default function Home() {
 
 								<ul className="space-y-3">
 									{[
-										"Formation individuelle ou en petit groupe",
-										"Programmes sur mesure",
-										"Exercices pratiques et projets concrets",
-										"Suivi personnalisé",
+										"Sessions 100% dédiées à vos besoins",
+										"Programme construit autour de votre projet réel",
+										"Vous codez dès la première heure — pas de théorie inutile",
+										"Feedback direct et suivi entre les sessions",
 									].map((item) => (
 										<li
 											key={item}

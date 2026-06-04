@@ -99,17 +99,17 @@ export default function Contact() {
 							{...fadeIn}
 							transition={{ delay: 0.2 }}
 						>
-							Me contacter
+							Parlons de votre projet
 						</motion.h2>
 						<motion.p
 							className="mt-6 text-lg/8 text-gray-600"
 							{...fadeIn}
 							transition={{ delay: 0.4 }}
 						>
-							Je suis là pour vous aider. Si vous avez des
-							questions ou des préoccupations, n'hésitez pas à me
-							contacter. Je m'engage à vous répondre dans les plus
-							brefs délais.
+							Une idée, un projet, une question technique ?
+							Décrivez-moi votre besoin — je vous réponds
+							personnellement sous 24h. Sans engagement,
+							sans jargon.
 						</motion.p>
 						<motion.dl
 							className="mt-10 space-y-4 text-base/7 text-gray-600"
@@ -270,9 +270,10 @@ export default function Contact() {
 						<div className="mt-8 flex justify-end">
 							<button
 								type="submit"
-								className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+								className="relative group overflow-hidden rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-3 text-center text-sm font-bold text-white shadow-md shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5 transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
 							>
-								Envoyer
+								<span className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 ease-in-out" />
+								<span className="relative z-10">Envoyer mon message →</span>
 							</button>
 						</div>
 					</div>
