@@ -22,9 +22,11 @@ import {
 	FaNodeJs,
 	FaDocker,
 	FaSymfony,
+	FaJava,
+	FaAngular,
 } from "react-icons/fa";
 import { BiLogoTypescript } from "react-icons/bi";
-import { SiExpress, SiTailwindcss } from "react-icons/si";
+import { SiExpress, SiTailwindcss, SiPostgresql, SiMongodb, SiPrisma, SiGithubactions, SiVercel, SiSpringboot } from "react-icons/si";
 
 export const Icons = {
 	Github,
@@ -52,4 +54,12 @@ export const IconsSkills = {
 	Symfony: FaSymfony,
 	Express: SiExpress,
 	Tailwind: SiTailwindcss,
+	Java: FaJava,
+	Angular: FaAngular,
+	PostgreSQL: SiPostgresql,
+	MongoDB: SiMongodb,
+	Prisma: SiPrisma,
+	GithubActions: SiGithubactions,
+	Vercel: SiVercel,
+	SpringBoot: SiSpringboot,
 };

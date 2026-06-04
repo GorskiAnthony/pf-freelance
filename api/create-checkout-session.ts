@@ -8,25 +8,25 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 const SERVICES = {
 	freelancer_monthly: {
 		name: "Freelancer (Mensuel)",
-		unit_amount: 1900,
+		unit_amount: 5900,
 		interval: "month",
 		is_subscription: true,
 	},
 	freelancer_yearly: {
 		name: "Freelancer (Annuel)",
-		unit_amount: 19900,
+		unit_amount: 59000,
 		interval: "year",
 		is_subscription: true,
 	},
 	startup_monthly: {
 		name: "Startup (Mensuel)",
-		unit_amount: 2900,
+		unit_amount: 9900,
 		interval: "month",
 		is_subscription: true,
 	},
 	startup_yearly: {
 		name: "Startup (Annuel)",
-		unit_amount: 29900,
+		unit_amount: 99000,
 		interval: "year",
 		is_subscription: true,
 	},

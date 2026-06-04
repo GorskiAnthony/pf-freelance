@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import ScrollToTop from "../helpers/ScrollTop";
 function Layout() {
 	return (
-		<div className="min-h-screen bg-zinc-50">
+		<div className="min-h-screen bg-white">
 			<ScrollToTop />
 			<Navbar />
 			<Outlet />
