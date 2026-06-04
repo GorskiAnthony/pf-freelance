@@ -1,130 +1,305 @@
 export const PolitiqueConfidentialite = () => {
-	const sections = [
-		{
-			title: "1. Introduction",
-			content:
-				"La présente politique de confidentialité a pour but d’informer les utilisateurs du site www.agorski.dev sur la manière dont leurs données personnelles sont collectées, utilisées et protégées. Anthony Gorski s’engage à respecter la confidentialité des données personnelles conformément au RGPD et à la loi Informatique et Libertés.",
-		},
-		{
-			title: "2. Données collectées",
-			content: (
-				<>
-					<p>Les données susceptibles d’être collectées sont :</p>
-					<ul className="list-disc list-inside mt-2">
-						<li>Nom et prénom</li>
-						<li>Adresse email</li>
-						<li>Numéro de téléphone (facultatif)</li>
-						<li>
-							Contenus des messages envoyés via le formulaire de
-							contact
-						</li>
-						{/* <li>
-							Données de navigation (adresse IP, type de
-							navigateur, temps de visite…)
-						</li> */}
-					</ul>
-				</>
-			),
-		},
-		{
-			title: "3. Utilisation des données",
-			content: (
-				<>
-					<p>Les données collectées sont utilisées pour :</p>
-					<ul className="list-disc list-inside mt-2">
-						<li>Répondre aux demandes de contact</li>
-						<li>Fournir les prestations convenues</li>
-						<li>
-							Envoyer des informations relatives aux services
-							proposés
-						</li>
-						<li>Améliorer le site et l’expérience utilisateur</li>
-						<li>Respecter les obligations légales</li>
-					</ul>
-				</>
-			),
-		},
-		{
-			title: "4. Consentement",
-			content:
-				"En utilisant le formulaire de contact ou en naviguant sur le site, vous consentez à la collecte et au traitement de vos données personnelles conformément à cette politique de confidentialité.",
-		},
-		{
-			title: "5. Durée de conservation",
-			content:
-				"Les données sont conservées pour la durée nécessaire à la réalisation des finalités pour lesquelles elles ont été collectées, ou pour se conformer à des obligations légales.",
-		},
-		{
-			title: "6. Partage des données",
-			content:
-				"Les données ne sont ni vendues ni louées à des tiers. Elles peuvent être partagées avec des prestataires techniques pour des besoins strictement liés à l’exécution des services (hébergement, emailing, etc.). Tous les partenaires sont conformes au RGPD.",
-		},
-		{
-			title: "7. Sécurité",
-			content:
-				"Anthony Gorski met en œuvre toutes les mesures nécessaires pour protéger les données personnelles contre tout accès non autorisé, altération ou destruction.",
-		},
-		{
-			title: "8. Vos droits",
-			content: (
-				<>
-					<p>
-						Conformément au RGPD, vous disposez des droits suivants
-						:
-					</p>
-					<ul className="list-disc list-inside mt-2">
-						<li>Droit d’accès à vos données</li>
-						<li>Droit de rectification</li>
-						<li>Droit à l’effacement</li>
-						<li>Droit à la limitation du traitement</li>
-						<li>Droit d’opposition</li>
-						<li>Droit à la portabilité des données</li>
-					</ul>
-					<p className="mt-2">
-						Pour exercer ces droits, vous pouvez contacter Anthony
-						Gorski par email à l’adresse :
-						<a
-							href="mailto:anthony.developpeurweb@gmail.com"
-							className="text-blue-600 underline"
-						>
-							{" "}
-							anthony.developpeurweb@gmail.com
-						</a>
-					</p>
-				</>
-			),
-		},
-		{
-			title: "9. Cookies",
-			content:
-				"Le site utilise des cookies à des fins de mesure d’audience et de bon fonctionnement. Vous pouvez refuser les cookies en configurant votre navigateur.",
-		},
-		{
-			title: "10. Modification de la politique",
-			content:
-				"Anthony Gorski se réserve le droit de modifier la présente politique de confidentialité à tout moment. Toute modification sera publiée sur cette page.",
-		},
-	];
-
 	return (
 		<div className="max-w-4xl mx-auto px-4 py-32 text-gray-800">
 			<h1 className="text-3xl font-bold mb-6">
-				Politique de Confidentialité
+				Politique de confidentialité
 			</h1>
 			<p className="text-sm text-gray-500 mb-10">
-				Dernière mise à jour : 29 mars 2025
+				Dernière mise à jour : 4 juin 2026
 			</p>
 
-			{sections.map((section, index) => (
-				<section key={index} className="mb-8">
-					<h2 className="text-xl font-semibold mb-2">
-						{section.title}
-					</h2>
-					<div className="text-base leading-relaxed">
-						{section.content}
-					</div>
-				</section>
-			))}
+			{/* 1. Responsable */}
+			<section className="mb-8">
+				<h2 className="text-xl font-semibold mb-3">
+					1. Responsable du traitement
+				</h2>
+				<p className="leading-relaxed">
+					<strong>Anthony Gorski</strong> – Développeur web freelance<br />
+					SIRET : 81375236700017<br />
+					Email :{" "}
+					<a
+						href="mailto:anthony.developpeurweb@gmail.com"
+						className="text-blue-600 underline"
+					>
+						anthony.developpeurweb@gmail.com
+					</a>
+				</p>
+			</section>
+
+			{/* 2. Données collectées */}
+			<section className="mb-8">
+				<h2 className="text-xl font-semibold mb-3">2. Données collectées</h2>
+				<p className="mb-3">
+					Selon le type d'interaction avec le site, les données suivantes
+					peuvent être collectées :
+				</p>
+				<div className="overflow-x-auto">
+					<table className="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
+						<thead className="bg-gray-50">
+							<tr>
+								<th className="text-left px-4 py-3 font-semibold border-b border-gray-200">
+									Contexte
+								</th>
+								<th className="text-left px-4 py-3 font-semibold border-b border-gray-200">
+									Données
+								</th>
+								<th className="text-left px-4 py-3 font-semibold border-b border-gray-200">
+									Base légale (RGPD art. 6)
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr className="border-b border-gray-100">
+								<td className="px-4 py-3">Formulaire de contact</td>
+								<td className="px-4 py-3">
+									Nom, email, message
+								</td>
+								<td className="px-4 py-3">
+									Intérêt légitime (art. 6.1.f)
+								</td>
+							</tr>
+							<tr className="border-b border-gray-100 bg-gray-50">
+								<td className="px-4 py-3">Paiement en ligne</td>
+								<td className="px-4 py-3">
+									Données de facturation (traitées par Stripe)
+								</td>
+								<td className="px-4 py-3">
+									Exécution du contrat (art. 6.1.b)
+								</td>
+							</tr>
+							<tr className="border-b border-gray-100">
+								<td className="px-4 py-3">Exécution de la prestation</td>
+								<td className="px-4 py-3">
+									Nom, email, échanges liés à la mission
+								</td>
+								<td className="px-4 py-3">
+									Exécution du contrat (art. 6.1.b)
+								</td>
+							</tr>
+							<tr className="bg-gray-50">
+								<td className="px-4 py-3">Obligations comptables</td>
+								<td className="px-4 py-3">
+									Données de facturation
+								</td>
+								<td className="px-4 py-3">
+									Obligation légale (art. 6.1.c)
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			{/* 3. Durée de conservation */}
+			<section className="mb-8">
+				<h2 className="text-xl font-semibold mb-3">
+					3. Durée de conservation
+				</h2>
+				<ul className="list-disc list-inside space-y-2 leading-relaxed">
+					<li>
+						<strong>Données de contact</strong> : 3 ans à compter du dernier
+						contact, conformément aux recommandations de la CNIL
+					</li>
+					<li>
+						<strong>Données clients / contrats</strong> : 5 ans à compter de
+						la fin de la relation contractuelle (prescription civile)
+					</li>
+					<li>
+						<strong>Données de facturation</strong> : 10 ans à compter de la
+						clôture de l'exercice (obligation comptable – art. L123-22 du Code
+						de commerce)
+					</li>
+					<li>
+						<strong>Données de paiement</strong> : conservées par Stripe selon
+						leur propre politique de confidentialité
+					</li>
+				</ul>
+			</section>
+
+			{/* 4. Sous-traitants */}
+			<section className="mb-8">
+				<h2 className="text-xl font-semibold mb-3">
+					4. Sous-traitants et transferts hors UE
+				</h2>
+				<p className="mb-3">
+					Certains prestataires tiers interviennent dans le traitement des
+					données. Ils agissent en qualité de sous-traitants et sont soumis à
+					des obligations de confidentialité :
+				</p>
+				<div className="overflow-x-auto">
+					<table className="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
+						<thead className="bg-gray-50">
+							<tr>
+								<th className="text-left px-4 py-3 font-semibold border-b border-gray-200">
+									Prestataire
+								</th>
+								<th className="text-left px-4 py-3 font-semibold border-b border-gray-200">
+									Rôle
+								</th>
+								<th className="text-left px-4 py-3 font-semibold border-b border-gray-200">
+									Localisation
+								</th>
+								<th className="text-left px-4 py-3 font-semibold border-b border-gray-200">
+									Garanties
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr className="border-b border-gray-100">
+								<td className="px-4 py-3 font-medium">Stripe</td>
+								<td className="px-4 py-3">Paiement en ligne</td>
+								<td className="px-4 py-3">USA</td>
+								<td className="px-4 py-3">
+									<a
+										href="https://stripe.com/fr/privacy"
+										target="_blank"
+										rel="noopener noreferrer"
+										className="text-blue-600 underline"
+									>
+										Data Privacy Framework
+									</a>
+								</td>
+							</tr>
+							<tr className="border-b border-gray-100 bg-gray-50">
+								<td className="px-4 py-3 font-medium">EmailJS</td>
+								<td className="px-4 py-3">Envoi des emails de contact</td>
+								<td className="px-4 py-3">USA</td>
+								<td className="px-4 py-3">
+									<a
+										href="https://www.emailjs.com/legal/privacy-policy/"
+										target="_blank"
+										rel="noopener noreferrer"
+										className="text-blue-600 underline"
+									>
+										Politique de confidentialité EmailJS
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td className="px-4 py-3 font-medium">OVHcloud</td>
+								<td className="px-4 py-3">Hébergement du site</td>
+								<td className="px-4 py-3">France (UE)</td>
+								<td className="px-4 py-3">
+									<a
+										href="https://www.ovhcloud.com/fr/personal-data-protection/"
+										target="_blank"
+										rel="noopener noreferrer"
+										className="text-blue-600 underline"
+									>
+										Politique de confidentialité OVH
+									</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<p className="mt-3 text-sm text-gray-600">
+					Les transferts hors UE (Stripe, EmailJS) sont encadrés par des
+					garanties appropriées (clauses contractuelles types ou Data Privacy
+					Framework UE–USA). L'hébergement est assuré en France par OVHcloud.
+				</p>
+			</section>
+
+			{/* 5. Cookies */}
+			<section className="mb-8">
+				<h2 className="text-xl font-semibold mb-3">5. Cookies</h2>
+				<p className="mb-3">
+					Le site utilise uniquement des cookies techniques strictement
+					nécessaires à son bon fonctionnement (session, préférences). Aucun
+					cookie publicitaire ou de tracking analytique tiers n'est déposé sans
+					consentement préalable.
+				</p>
+				<p>
+					Vous pouvez à tout moment configurer votre navigateur pour refuser ou
+					supprimer les cookies déjà stockés. Le refus des cookies techniques
+					peut affecter certaines fonctionnalités du site.
+				</p>
+			</section>
+
+			{/* 6. Vos droits */}
+			<section className="mb-8">
+				<h2 className="text-xl font-semibold mb-3">6. Vos droits</h2>
+				<p className="mb-3">
+					Conformément au RGPD (articles 15 à 22), vous disposez des droits
+					suivants sur vos données personnelles :
+				</p>
+				<ul className="list-disc list-inside space-y-1 mb-4">
+					<li>
+						<strong>Droit d'accès</strong> : obtenir une copie des données vous
+						concernant
+					</li>
+					<li>
+						<strong>Droit de rectification</strong> : corriger des données
+						inexactes ou incomplètes
+					</li>
+					<li>
+						<strong>Droit à l'effacement</strong> : demander la suppression de
+						vos données (sous réserve des obligations légales)
+					</li>
+					<li>
+						<strong>Droit à la limitation</strong> : restreindre le traitement
+						dans certains cas
+					</li>
+					<li>
+						<strong>Droit d'opposition</strong> : s'opposer à un traitement
+						fondé sur l'intérêt légitime
+					</li>
+					<li>
+						<strong>Droit à la portabilité</strong> : recevoir vos données dans
+						un format structuré et lisible
+					</li>
+				</ul>
+				<p className="mb-3">
+					Pour exercer ces droits, contactez :{" "}
+					<a
+						href="mailto:anthony.developpeurweb@gmail.com"
+						className="text-blue-600 underline"
+					>
+						anthony.developpeurweb@gmail.com
+					</a>
+					. Une réponse sera apportée dans un délai d'un mois.
+				</p>
+				<p className="text-sm bg-gray-50 border border-gray-200 rounded p-3">
+					Si vous estimez que vos droits ne sont pas respectés, vous avez le
+					droit d'introduire une réclamation auprès de la{" "}
+					<a
+						href="https://www.cnil.fr"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="text-blue-600 underline"
+					>
+						CNIL
+					</a>{" "}
+					(Commission Nationale de l'Informatique et des Libertés) –
+					www.cnil.fr.
+				</p>
+			</section>
+
+			{/* 7. Sécurité */}
+			<section className="mb-8">
+				<h2 className="text-xl font-semibold mb-3">7. Sécurité</h2>
+				<p className="leading-relaxed">
+					Des mesures techniques et organisationnelles appropriées sont mises en
+					œuvre pour protéger vos données contre tout accès non autorisé,
+					divulgation, altération ou destruction. Les paiements sont intégralement
+					gérés par Stripe, qui est certifié PCI-DSS niveau 1. Aucune donnée
+					bancaire ne transite par les serveurs du site.
+				</p>
+			</section>
+
+			{/* 8. Modifications */}
+			<section className="mb-8">
+				<h2 className="text-xl font-semibold mb-3">
+					8. Modifications de la politique
+				</h2>
+				<p className="leading-relaxed">
+					La présente politique peut être mise à jour à tout moment pour
+					refléter des changements légaux ou opérationnels. La date de dernière
+					mise à jour est indiquée en haut de cette page. En continuant à
+					utiliser le site après toute modification, vous acceptez la politique
+					révisée.
+				</p>
+			</section>
 		</div>
 	);
 };
