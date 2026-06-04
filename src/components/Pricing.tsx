@@ -18,8 +18,8 @@ const tiers = [
 		id: "tier-freelancer",
 		href: "#",
 		price: {
-			monthly: { label: "€19", id: "freelancer_monthly" },
-			annually: { label: "€199", id: "freelancer_yearly" },
+			monthly: { label: "€59", id: "freelancer_monthly" },
+			annually: { label: "€590", id: "freelancer_yearly" },
 		},
 		description:
 			"L'essentiel pour donner le meilleur de soi à ses clients.",
@@ -37,8 +37,8 @@ const tiers = [
 		id: "tier-startup",
 		href: "#",
 		price: {
-			monthly: { label: "€29", id: "startup_monthly" },
-			annually: { label: "€299", id: "startup_yearly" },
+			monthly: { label: "€99", id: "startup_monthly" },
+			annually: { label: "€990", id: "startup_yearly" },
 		},
 		description:
 			"Un plan qui s'adapte à la croissance rapide de votre entreprise.",
@@ -139,7 +139,7 @@ export default function Pricing() {
 									tier.featured
 										? "bg-gray-900 ring-gray-900"
 										: "ring-gray-200",
-									"rounded-3xl p-8 ring-1 xl:p-10"
+									"rounded-3xl p-8 ring-1 xl:p-10",
 								)}
 							>
 								<h3
@@ -148,7 +148,7 @@ export default function Pricing() {
 										tier.featured
 											? "text-white"
 											: "text-gray-900",
-										"text-lg/8 font-semibold"
+										"text-lg/8 font-semibold",
 									)}
 								>
 									{tier.name}
@@ -158,7 +158,7 @@ export default function Pricing() {
 										tier.featured
 											? "text-gray-300"
 											: "text-gray-600",
-										"mt-4 text-sm/6"
+										"mt-4 text-sm/6",
 									)}
 								>
 									{tier.description}
@@ -169,7 +169,7 @@ export default function Pricing() {
 											tier.featured
 												? "text-white"
 												: "text-gray-900",
-											"text-4xl font-semibold tracking-tight"
+											"text-4xl font-semibold tracking-tight",
 										)}
 									>
 										{typeof tier.price === "string"
@@ -182,7 +182,7 @@ export default function Pricing() {
 												tier.featured
 													? "text-gray-300"
 													: "text-gray-600",
-												"text-sm/6 font-semibold"
+												"text-sm/6 font-semibold",
 											)}
 										>
 											{frequency.priceSuffix}
@@ -193,7 +193,7 @@ export default function Pricing() {
 									onClick={() => {
 										if (typeof tier.price !== "string") {
 											payer(
-												tier.price[frequency.value].id
+												tier.price[frequency.value].id,
 											);
 										}
 									}}
@@ -202,7 +202,7 @@ export default function Pricing() {
 										tier.featured
 											? "bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white"
 											: "bg-indigo-600 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-indigo-600",
-										"mt-6 block w-full rounded-md px-3 py-2 text-center text-sm/6 font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+										"mt-6 block w-full rounded-md px-3 py-2 text-center text-sm/6 font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2",
 									)}
 								>
 									{tier.cta}
@@ -213,7 +213,7 @@ export default function Pricing() {
 										tier.featured
 											? "text-gray-300"
 											: "text-gray-600",
-										"mt-8 space-y-3 text-sm/6 xl:mt-10"
+										"mt-8 space-y-3 text-sm/6 xl:mt-10",
 									)}
 								>
 									{tier.features.map((feature) => (
@@ -227,7 +227,7 @@ export default function Pricing() {
 													tier.featured
 														? "text-white"
 														: "text-indigo-600",
-													"h-6 w-5 flex-none"
+													"h-6 w-5 flex-none",
 												)}
 											/>
 											{feature}

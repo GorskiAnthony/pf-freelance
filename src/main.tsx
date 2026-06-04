@@ -64,7 +64,7 @@ const rootElement = document.getElementById("root");
 
 if (rootElement == null) {
 	throw new Error(
-		`Your HTML Document should contain a <div id="root"></div>`
+		`Your HTML Document should contain a <div id="root"></div>`,
 	);
 }
 
@@ -81,5 +81,5 @@ createRoot(rootElement).render(
 			draggable
 			theme="colored"
 		/>
-	</StrictMode>
+	</StrictMode>,
 );

@@ -12,11 +12,11 @@ export default function ConditionsVente() {
 					<p className="mb-2 font-semibold">Création de site web</p>
 					<ul className="list-disc list-inside mb-4">
 						<li>
-							<strong>Freelancer</strong> : 19€/mois – Site
+							<strong>Freelancer</strong> : 59€/mois – Site
 							vitrine 1 page, responsive, support sous 48h
 						</li>
 						<li>
-							<strong>Startup</strong> : 29€/mois – Site jusqu’à 5
+							<strong>Startup</strong> : 99€/mois – Site jusqu’à 5
 							pages, design personnalisé, support sous 24h
 						</li>
 						<li>

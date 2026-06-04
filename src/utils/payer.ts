@@ -5,7 +5,7 @@ export const payer = async (service: string) => {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({ service }),
-		}
+		},
 	);
 	const data = await res.json();
 	if (data.url) {
