@@ -2,17 +2,18 @@ import { Link } from "react-router-dom";
 
 export default function Success() {
 	return (
-		<div className="min-h-screen flex flex-col items-center justify-center text-center bg-green-50 px-4">
-			<h1 className="text-4xl font-bold text-green-700 mb-4">
-				Merci ! 🎉
-			</h1>
-			<p className="text-lg text-green-800 mb-6">
+		<div className="min-h-screen flex flex-col items-center justify-center text-center bg-paper px-4">
+			<span className="font-mono text-xs uppercase tracking-wider text-petrol mb-4">
+				Paiement confirmé
+			</span>
+			<h1 className="font-display text-4xl text-ink mb-4">Merci !</h1>
+			<p className="text-lg text-slate mb-8 max-w-md">
 				Le paiement a été effectué avec succès. Vous allez recevoir un
 				e-mail de confirmation sous peu.
 			</p>
 			<Link
 				to="/"
-				className="bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700 transition"
+				className="bg-ink text-paper px-6 py-3.5 font-semibold hover:bg-petrol-deep transition-colors duration-200"
 			>
 				Retour à l'accueil
 			</Link>
