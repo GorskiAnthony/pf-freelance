@@ -16,6 +16,7 @@ import Success from "./pages/Success.tsx";
 import Cancel from "./pages/Cancel.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
+import About from "./pages/About.tsx";
 
 const router = createBrowserRouter([
 	{
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
 			{
 				path: "/contact",
 				element: <Contact />,
+			},
+			{
+				path: "/a-propos",
+				element: <About />,
 			},
 			{
 				path: "/blog",
