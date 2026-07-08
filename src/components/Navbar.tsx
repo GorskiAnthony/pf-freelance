@@ -10,57 +10,65 @@ const Navbar = () => {
 
 	const navLinks = [
 		{ name: "Accueil", link: "/" },
+		{ name: "À propos", link: "/a-propos" },
 		{ name: "Plans & Tarifs", link: "/pricing" },
-		{ name: "Contact", link: "/contact" },
+		{ name: "Blog", link: "/blog" },
 	];
 
 	const isActive = (href: string) =>
 		href === "/" ? location.pathname === "/" : location.pathname.startsWith(href);
 
 	return (
-		<nav className="fixed w-full z-50 bg-white/80 backdrop-blur-xl border-b border-zinc-200/60 shadow-sm shadow-zinc-200/40">
-			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div className="flex justify-between h-16">
+		<nav className="fixed w-full z-50 bg-paper/95 backdrop-blur-sm border-b border-mist">
+			<div className="max-w-6xl mx-auto px-5 sm:px-8">
+				<div className="flex justify-between items-center h-[72px]">
 					{/* Logo */}
-					<div className="flex items-center space-x-3">
-						<img src="assets/logo.png" alt="Logo" className="w-10 h-10" />
-						<Link
-							to="/"
-							className="text-xl font-black text-zinc-900 tracking-tight hover:text-blue-700 transition-colors duration-200"
-						>
-							Anthony
-						</Link>
-					</div>
+					<Link
+						to="/"
+						className="flex items-center gap-2.5 group"
+					>
+						<img src="assets/logo.png" alt="Logo" className="w-8 h-8" />
+						<span className="font-display text-xl text-ink tracking-tight group-hover:text-petrol transition-colors duration-200">
+							Anthony Gorski
+						</span>
+					</Link>
 
 					{/* Desktop */}
-					<div className="hidden md:flex items-center gap-1">
+					<div className="hidden md:flex items-center gap-8">
 						{navLinks.map((item) => (
 							<Link
 								key={item.link}
 								to={item.link}
 								className={clsx(
-									"relative px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200",
+									"relative py-2 font-mono text-[13px] uppercase tracking-wider transition-colors duration-200",
 									isActive(item.link)
-										? "text-blue-700 bg-blue-50"
-										: "text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100",
+										? "text-ink"
+										: "text-slate hover:text-ink",
 								)}
 							>
 								{item.name}
 								{isActive(item.link) && (
 									<motion.div
 										layoutId="navbar-indicator"
-										className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"
+										className="absolute -bottom-px left-0 right-0 h-[2px] bg-petrol"
 									/>
 								)}
 							</Link>
 						))}
+						<Link
+							to="/contact"
+							className="font-mono text-[13px] uppercase tracking-wider bg-ink text-paper px-4 py-2.5 hover:bg-petrol-deep transition-colors duration-200"
+						>
+							Discutons →
+						</Link>
 					</div>
 
 					{/* Mobile toggle */}
 					<div className="md:hidden flex items-center">
 						<button
 							onClick={() => setIsOpen(!isOpen)}
-							className="p-2 rounded-xl text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100 transition-all duration-200"
+							className="p-2 text-ink"
+							aria-label="Menu"
 						>
 							{isOpen ? <Icons.X size={22} /> : <Icons.Menu size={22} />}
 						</button>
@@ -78,22 +86,24 @@ const Navbar = () => {
 						transition={{ duration: 0.2 }}
 						className="md:hidden overflow-hidden"
 					>
-						<div className="px-4 py-3 space-y-1 bg-white/95 backdrop-blur-xl border-t border-zinc-100">
-							{navLinks.map((item) => (
-								<Link
-									key={item.link}
-									to={item.link}
-									onClick={() => setIsOpen(false)}
-									className={clsx(
-										"block px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200",
-										isActive(item.link)
-											? "text-blue-700 bg-blue-50"
-											: "text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100",
-									)}
-								>
-									{item.name}
-								</Link>
-							))}
+						<div className="px-5 py-3 space-y-1 bg-paper border-t border-mist">
+							{[...navLinks, { name: "Contact", link: "/contact" }].map(
+								(item) => (
+									<Link
+										key={item.link}
+										to={item.link}
+										onClick={() => setIsOpen(false)}
+										className={clsx(
+											"block px-1 py-2.5 font-mono text-sm uppercase tracking-wider border-b border-mist last:border-0",
+											isActive(item.link)
+												? "text-ink"
+												: "text-slate",
+										)}
+									>
+										{item.name}
+									</Link>
+								),
+							)}
 						</div>
 					</motion.div>
 				)}
