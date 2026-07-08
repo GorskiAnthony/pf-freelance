@@ -1,25 +1,25 @@
 export const PolitiqueConfidentialite = () => {
 	return (
-		<div className="max-w-4xl mx-auto px-4 py-32 text-gray-800">
-			<h1 className="text-3xl font-bold mb-6">
+		<div className="max-w-4xl mx-auto px-4 py-32 text-ink">
+			<h1 className="font-display text-3xl md:text-4xl text-ink mb-4">
 				Politique de confidentialité
 			</h1>
-			<p className="text-sm text-gray-500 mb-10">
+			<p className="font-mono text-xs uppercase tracking-wider text-slate mb-12">
 				Dernière mise à jour : 4 juin 2026
 			</p>
 
 			{/* 1. Responsable */}
-			<section className="mb-8">
-				<h2 className="text-xl font-semibold mb-3">
+			<section className="mb-10 pt-8 border-t border-mist first:border-t-0 first:pt-0">
+				<h2 className="font-display text-xl text-ink mb-3">
 					1. Responsable du traitement
 				</h2>
-				<p className="leading-relaxed">
+				<p className="leading-relaxed text-slate">
 					<strong>Anthony Gorski</strong> – Développeur web freelance<br />
 					SIRET : 81375236700017<br />
 					Email :{" "}
 					<a
 						href="mailto:anthony.developpeurweb@gmail.com"
-						className="text-blue-600 underline"
+						className="text-petrol underline hover:text-petrol-deep"
 					>
 						anthony.developpeurweb@gmail.com
 					</a>
@@ -27,29 +27,29 @@ export const PolitiqueConfidentialite = () => {
 			</section>
 
 			{/* 2. Données collectées */}
-			<section className="mb-8">
-				<h2 className="text-xl font-semibold mb-3">2. Données collectées</h2>
-				<p className="mb-3">
+			<section className="mb-10 pt-8 border-t border-mist first:border-t-0 first:pt-0">
+				<h2 className="font-display text-xl text-ink mb-3">2. Données collectées</h2>
+				<p className="mb-3 text-slate">
 					Selon le type d'interaction avec le site, les données suivantes
 					peuvent être collectées :
 				</p>
 				<div className="overflow-x-auto">
-					<table className="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
-						<thead className="bg-gray-50">
+					<table className="w-full text-sm border border-mist bg-white">
+						<thead className="bg-mist/50">
 							<tr>
-								<th className="text-left px-4 py-3 font-semibold border-b border-gray-200">
+								<th className="text-left px-4 py-3 font-mono text-xs uppercase tracking-wider text-slate border-b border-mist">
 									Contexte
 								</th>
-								<th className="text-left px-4 py-3 font-semibold border-b border-gray-200">
+								<th className="text-left px-4 py-3 font-mono text-xs uppercase tracking-wider text-slate border-b border-mist">
 									Données
 								</th>
-								<th className="text-left px-4 py-3 font-semibold border-b border-gray-200">
+								<th className="text-left px-4 py-3 font-mono text-xs uppercase tracking-wider text-slate border-b border-mist">
 									Base légale (RGPD art. 6)
 								</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr className="border-b border-gray-100">
+							<tr className="border-b border-mist">
 								<td className="px-4 py-3">Formulaire de contact</td>
 								<td className="px-4 py-3">
 									Nom, email, message
@@ -58,7 +58,7 @@ export const PolitiqueConfidentialite = () => {
 									Intérêt légitime (art. 6.1.f)
 								</td>
 							</tr>
-							<tr className="border-b border-gray-100 bg-gray-50">
+							<tr className="border-b border-mist">
 								<td className="px-4 py-3">Paiement en ligne</td>
 								<td className="px-4 py-3">
 									Données de facturation (traitées par Stripe)
@@ -67,7 +67,7 @@ export const PolitiqueConfidentialite = () => {
 									Exécution du contrat (art. 6.1.b)
 								</td>
 							</tr>
-							<tr className="border-b border-gray-100">
+							<tr className="border-b border-mist">
 								<td className="px-4 py-3">Exécution de la prestation</td>
 								<td className="px-4 py-3">
 									Nom, email, échanges liés à la mission
@@ -76,7 +76,7 @@ export const PolitiqueConfidentialite = () => {
 									Exécution du contrat (art. 6.1.b)
 								</td>
 							</tr>
-							<tr className="bg-gray-50">
+							<tr>
 								<td className="px-4 py-3">Obligations comptables</td>
 								<td className="px-4 py-3">
 									Données de facturation
@@ -91,11 +91,11 @@ export const PolitiqueConfidentialite = () => {
 			</section>
 
 			{/* 3. Durée de conservation */}
-			<section className="mb-8">
-				<h2 className="text-xl font-semibold mb-3">
+			<section className="mb-10 pt-8 border-t border-mist first:border-t-0 first:pt-0">
+				<h2 className="font-display text-xl text-ink mb-3">
 					3. Durée de conservation
 				</h2>
-				<ul className="list-disc list-inside space-y-2 leading-relaxed">
+				<ul className="list-disc list-inside space-y-2 leading-relaxed text-slate">
 					<li>
 						<strong>Données de contact</strong> : 3 ans à compter du dernier
 						contact, conformément aux recommandations de la CNIL
@@ -117,35 +117,35 @@ export const PolitiqueConfidentialite = () => {
 			</section>
 
 			{/* 4. Sous-traitants */}
-			<section className="mb-8">
-				<h2 className="text-xl font-semibold mb-3">
+			<section className="mb-10 pt-8 border-t border-mist first:border-t-0 first:pt-0">
+				<h2 className="font-display text-xl text-ink mb-3">
 					4. Sous-traitants et transferts hors UE
 				</h2>
-				<p className="mb-3">
+				<p className="mb-3 text-slate">
 					Certains prestataires tiers interviennent dans le traitement des
 					données. Ils agissent en qualité de sous-traitants et sont soumis à
 					des obligations de confidentialité :
 				</p>
 				<div className="overflow-x-auto">
-					<table className="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
-						<thead className="bg-gray-50">
+					<table className="w-full text-sm border border-mist bg-white">
+						<thead className="bg-mist/50">
 							<tr>
-								<th className="text-left px-4 py-3 font-semibold border-b border-gray-200">
+								<th className="text-left px-4 py-3 font-mono text-xs uppercase tracking-wider text-slate border-b border-mist">
 									Prestataire
 								</th>
-								<th className="text-left px-4 py-3 font-semibold border-b border-gray-200">
+								<th className="text-left px-4 py-3 font-mono text-xs uppercase tracking-wider text-slate border-b border-mist">
 									Rôle
 								</th>
-								<th className="text-left px-4 py-3 font-semibold border-b border-gray-200">
+								<th className="text-left px-4 py-3 font-mono text-xs uppercase tracking-wider text-slate border-b border-mist">
 									Localisation
 								</th>
-								<th className="text-left px-4 py-3 font-semibold border-b border-gray-200">
+								<th className="text-left px-4 py-3 font-mono text-xs uppercase tracking-wider text-slate border-b border-mist">
 									Garanties
 								</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr className="border-b border-gray-100">
+							<tr className="border-b border-mist">
 								<td className="px-4 py-3 font-medium">Stripe</td>
 								<td className="px-4 py-3">Paiement en ligne</td>
 								<td className="px-4 py-3">USA</td>
@@ -154,13 +154,13 @@ export const PolitiqueConfidentialite = () => {
 										href="https://stripe.com/fr/privacy"
 										target="_blank"
 										rel="noopener noreferrer"
-										className="text-blue-600 underline"
+										className="text-petrol underline hover:text-petrol-deep"
 									>
 										Data Privacy Framework
 									</a>
 								</td>
 							</tr>
-							<tr className="border-b border-gray-100 bg-gray-50">
+							<tr className="border-b border-mist">
 								<td className="px-4 py-3 font-medium">EmailJS</td>
 								<td className="px-4 py-3">Envoi des emails de contact</td>
 								<td className="px-4 py-3">USA</td>
@@ -169,7 +169,7 @@ export const PolitiqueConfidentialite = () => {
 										href="https://www.emailjs.com/legal/privacy-policy/"
 										target="_blank"
 										rel="noopener noreferrer"
-										className="text-blue-600 underline"
+										className="text-petrol underline hover:text-petrol-deep"
 									>
 										Politique de confidentialité EmailJS
 									</a>
@@ -184,7 +184,7 @@ export const PolitiqueConfidentialite = () => {
 										href="https://www.ovhcloud.com/fr/personal-data-protection/"
 										target="_blank"
 										rel="noopener noreferrer"
-										className="text-blue-600 underline"
+										className="text-petrol underline hover:text-petrol-deep"
 									>
 										Politique de confidentialité OVH
 									</a>
@@ -193,7 +193,7 @@ export const PolitiqueConfidentialite = () => {
 						</tbody>
 					</table>
 				</div>
-				<p className="mt-3 text-sm text-gray-600">
+				<p className="mt-3 text-sm text-slate">
 					Les transferts hors UE (Stripe, EmailJS) sont encadrés par des
 					garanties appropriées (clauses contractuelles types ou Data Privacy
 					Framework UE–USA). L'hébergement est assuré en France par OVHcloud.
@@ -201,9 +201,9 @@ export const PolitiqueConfidentialite = () => {
 			</section>
 
 			{/* 5. Cookies */}
-			<section className="mb-8">
-				<h2 className="text-xl font-semibold mb-3">5. Cookies</h2>
-				<p className="mb-3">
+			<section className="mb-10 pt-8 border-t border-mist first:border-t-0 first:pt-0">
+				<h2 className="font-display text-xl text-ink mb-3">5. Cookies</h2>
+				<p className="mb-3 text-slate">
 					Le site utilise uniquement des cookies techniques strictement
 					nécessaires à son bon fonctionnement (session, préférences). Aucun
 					cookie publicitaire ou de tracking analytique tiers n'est déposé sans
@@ -217,13 +217,13 @@ export const PolitiqueConfidentialite = () => {
 			</section>
 
 			{/* 6. Vos droits */}
-			<section className="mb-8">
-				<h2 className="text-xl font-semibold mb-3">6. Vos droits</h2>
-				<p className="mb-3">
+			<section className="mb-10 pt-8 border-t border-mist first:border-t-0 first:pt-0">
+				<h2 className="font-display text-xl text-ink mb-3">6. Vos droits</h2>
+				<p className="mb-3 text-slate">
 					Conformément au RGPD (articles 15 à 22), vous disposez des droits
 					suivants sur vos données personnelles :
 				</p>
-				<ul className="list-disc list-inside space-y-1 mb-4">
+				<ul className="list-disc list-inside space-y-1 mb-4 text-slate">
 					<li>
 						<strong>Droit d'accès</strong> : obtenir une copie des données vous
 						concernant
@@ -249,24 +249,24 @@ export const PolitiqueConfidentialite = () => {
 						un format structuré et lisible
 					</li>
 				</ul>
-				<p className="mb-3">
+				<p className="mb-3 text-slate">
 					Pour exercer ces droits, contactez :{" "}
 					<a
 						href="mailto:anthony.developpeurweb@gmail.com"
-						className="text-blue-600 underline"
+						className="text-petrol underline hover:text-petrol-deep"
 					>
 						anthony.developpeurweb@gmail.com
 					</a>
 					. Une réponse sera apportée dans un délai d'un mois.
 				</p>
-				<p className="text-sm bg-gray-50 border border-gray-200 rounded p-3">
+				<p className="text-sm text-slate bg-white border border-mist p-4">
 					Si vous estimez que vos droits ne sont pas respectés, vous avez le
 					droit d'introduire une réclamation auprès de la{" "}
 					<a
 						href="https://www.cnil.fr"
 						target="_blank"
 						rel="noopener noreferrer"
-						className="text-blue-600 underline"
+						className="text-petrol underline hover:text-petrol-deep"
 					>
 						CNIL
 					</a>{" "}
@@ -276,9 +276,9 @@ export const PolitiqueConfidentialite = () => {
 			</section>
 
 			{/* 7. Sécurité */}
-			<section className="mb-8">
-				<h2 className="text-xl font-semibold mb-3">7. Sécurité</h2>
-				<p className="leading-relaxed">
+			<section className="mb-10 pt-8 border-t border-mist first:border-t-0 first:pt-0">
+				<h2 className="font-display text-xl text-ink mb-3">7. Sécurité</h2>
+				<p className="leading-relaxed text-slate">
 					Des mesures techniques et organisationnelles appropriées sont mises en
 					œuvre pour protéger vos données contre tout accès non autorisé,
 					divulgation, altération ou destruction. Les paiements sont intégralement
@@ -288,11 +288,11 @@ export const PolitiqueConfidentialite = () => {
 			</section>
 
 			{/* 8. Modifications */}
-			<section className="mb-8">
-				<h2 className="text-xl font-semibold mb-3">
+			<section className="mb-10 pt-8 border-t border-mist first:border-t-0 first:pt-0">
+				<h2 className="font-display text-xl text-ink mb-3">
 					8. Modifications de la politique
 				</h2>
-				<p className="leading-relaxed">
+				<p className="leading-relaxed text-slate">
 					La présente politique peut être mise à jour à tout moment pour
 					refléter des changements légaux ou opérationnels. La date de dernière
 					mise à jour est indiquée en haut de cette page. En continuant à

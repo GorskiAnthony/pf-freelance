@@ -9,8 +9,8 @@ export default function ConditionsVente() {
 			title: "2. Prestations",
 			content: (
 				<>
-					<p className="mb-2 font-semibold">Création de site web</p>
-					<ul className="list-disc list-inside mb-4">
+					<p className="mb-2 font-semibold text-ink">Création de site web</p>
+					<ul className="list-disc list-inside mb-4 text-slate">
 						<li>
 							<strong>Freelancer</strong> : 59€/mois – Site
 							vitrine 1 page, responsive, support sous 48h
@@ -25,8 +25,8 @@ export default function ConditionsVente() {
 							avancé, maintenance incluse
 						</li>
 					</ul>
-					<p className="mb-2 font-semibold">Cours particuliers</p>
-					<ul className="list-disc list-inside">
+					<p className="mb-2 font-semibold text-ink">Cours particuliers</p>
+					<ul className="list-disc list-inside text-slate">
 						<li>
 							<strong>Cours individuel</strong> : 40€/heure
 						</li>
@@ -42,30 +42,30 @@ export default function ConditionsVente() {
 			title: "3. Commande et règlement",
 			content: (
 				<>
-					<p className="mb-3">
+					<p className="mb-3 text-slate">
 						Les offres disponibles sur www.agorski.dev sont à prix fixes et
 						clairement détaillées. Aucun devis préalable n'est émis pour ces
 						prestations : la commande est validée par le paiement en ligne,
 						effectué via la plateforme sécurisée Stripe. La prestation débute
 						une fois le paiement confirmé.
 					</p>
-					<p className="mb-3">
+					<p className="mb-3 text-slate">
 						Pour la formule <strong>Enterprise (Sur mesure)</strong>, un
 						échange préalable par email permet de définir le périmètre exact
 						de la mission avant tout règlement.
 					</p>
-					<p className="mb-3">
+					<p className="mb-3 text-slate">
 						Pour les <strong>abonnements mensuels</strong>, le paiement est
 						prélevé automatiquement à chaque date d'anniversaire du contrat.
 						Le client peut résilier à tout moment, la résiliation prenant
 						effet à la fin de la période en cours déjà réglée.
 					</p>
-					<p className="mb-3">
+					<p className="mb-3 text-slate">
 						Pour les <strong>cours particuliers</strong>, le paiement est
 						exigible à la commande. Aucun remboursement n'est effectué une
 						fois la première séance débutée.
 					</p>
-					<p className="text-sm bg-gray-50 border border-gray-200 rounded p-3">
+					<p className="text-sm text-slate bg-white border border-mist p-4">
 						<strong>Renonciation au droit de rétractation :</strong> En
 						application de l'article L221-28 du Code de la consommation, le
 						client reconnaît expressément, en procédant au paiement, que la
@@ -79,7 +79,7 @@ export default function ConditionsVente() {
 			title: "4. Retard de paiement et suspension des services",
 			content: (
 				<>
-					<p className="mb-3">
+					<p className="mb-3 text-slate">
 						En cas de défaut de paiement à l'échéance, le prestataire se
 						réserve le droit de{" "}
 						<strong>
@@ -90,7 +90,7 @@ export default function ConditionsVente() {
 						faute du prestataire et ne donne droit à aucune indemnité au
 						profit du client.
 					</p>
-					<p className="mb-3">
+					<p className="mb-3 text-slate">
 						Passé un délai de <strong>15 jours calendaires</strong> à compter
 						de l'échéance impayée et sans régularisation, le prestataire se
 						réserve le droit de{" "}
@@ -98,11 +98,11 @@ export default function ConditionsVente() {
 						indemnité, et d'exiger le règlement immédiat de l'intégralité des
 						sommes dues.
 					</p>
-					<p className="mb-3">
+					<p className="mb-3 text-slate">
 						Conformément aux articles L441-10 et suivants du Code de
 						commerce, tout retard de paiement entraîne de plein droit :
 					</p>
-					<ul className="list-disc list-inside space-y-1 mb-3">
+					<ul className="list-disc list-inside space-y-1 mb-3 text-slate">
 						<li>
 							Des <strong>pénalités de retard</strong> calculées au taux
 							directeur de la Banque Centrale Européenne majoré de 10 points,
@@ -152,20 +152,20 @@ export default function ConditionsVente() {
 	];
 
 	return (
-		<div className="max-w-4xl mx-auto px-4 py-32 text-gray-800">
-			<h1 className="text-3xl font-bold mb-6">
+		<div className="max-w-4xl mx-auto px-4 py-32 text-ink">
+			<h1 className="font-display text-3xl md:text-4xl text-ink mb-4">
 				Conditions Générales de Vente (CGV)
 			</h1>
-			<p className="text-sm text-gray-500 mb-10">
+			<p className="font-mono text-xs uppercase tracking-wider text-slate mb-12">
 				Dernière mise à jour : 4 juin 2026
 			</p>
 
 			{sections.map((section, index) => (
-				<section key={index} className="mb-8">
-					<h2 className="text-xl font-semibold mb-2">
+				<section key={index} className="mb-10 pt-8 border-t border-mist first:border-t-0 first:pt-0">
+					<h2 className="font-display text-xl text-ink mb-3">
 						{section.title}
 					</h2>
-					<div className="text-base leading-relaxed">
+					<div className="text-base leading-relaxed text-slate">
 						{section.content}
 					</div>
 				</section>
