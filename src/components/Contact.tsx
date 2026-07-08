@@ -1,12 +1,13 @@
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
-import {
-	BuildingOffice2Icon,
-	EnvelopeIcon,
-	PhoneIcon,
-} from "@heroicons/react/24/outline";
 import { toast } from "react-toastify";
+import { Icons } from "../helpers/Icon";
+
+const inputClass =
+	"block w-full bg-transparent border-b border-mist py-2.5 text-ink placeholder:text-slate/50 focus:outline-none focus:border-petrol transition-colors duration-200";
+const labelClass =
+	"block font-mono text-xs uppercase tracking-wider text-slate mb-2";
 
 export default function Contact() {
 	const form = useRef<HTMLFormElement | null>(null);
@@ -20,13 +21,13 @@ export default function Contact() {
 					import.meta.env.VITE_EMAILJS_SERVICE_ID as string,
 					import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string,
 					form.current!,
-					import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string
+					import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string,
 				),
 				{
-					pending: "⏳ Envoi du message...",
+					pending: "Envoi du message...",
 					success: "Message envoyé avec succès !",
 					error: "Une erreur est survenue, réessayez.",
-				}
+				},
 			)
 			.then(() => {
 				if (form.current) {
@@ -40,240 +41,238 @@ export default function Contact() {
 		animate: { opacity: 1, y: 0 },
 		transition: { duration: 0.6 },
 	};
+
 	return (
 		<motion.section
-			className="relative isolate bg-white"
+			className="bg-paper"
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
-			transition={{ duration: 0.8 }}
+			transition={{ duration: 0.5 }}
 		>
-			<div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
-				<div className="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48">
-					<div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
-						<motion.div className="absolute inset-y-0 left-0 -z-10 w-full overflow-hidden bg-gray-100 ring-1 ring-gray-900/10 lg:w-1/2">
-							<svg
-								aria-hidden="true"
-								className="absolute inset-0 size-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
-							>
-								<defs>
-									<pattern
-										x="100%"
-										y={-1}
-										id="83fd4e5a-9d52-42fc-97b6-718e5d7ee527"
-										width={200}
-										height={200}
-										patternUnits="userSpaceOnUse"
-									>
-										<path
-											d="M130 200V.5M.5 .5H200"
-											fill="none"
-										/>
-									</pattern>
-								</defs>
-								<rect
-									fill="white"
-									width="100%"
-									height="100%"
-									strokeWidth={0}
-								/>
-								<svg
-									x="100%"
-									y={-1}
-									className="overflow-visible fill-gray-50"
-								>
-									<path
-										d="M-470.5 0h201v201h-201Z"
-										strokeWidth={0}
-									/>
-								</svg>
-								<rect
-									fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)"
-									width="100%"
-									height="100%"
-									strokeWidth={0}
-								/>
-							</svg>
-						</motion.div>
-						<motion.h2
-							className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl"
+			<div className="grid grid-cols-1 lg:grid-cols-2">
+				{/* Left - info panel */}
+				<div className="relative bg-ink px-6 pb-20 pt-32 sm:pt-40 lg:px-12 lg:py-40">
+					<div
+						className="absolute inset-0 opacity-[0.035] pointer-events-none"
+						style={{
+							backgroundImage:
+								"linear-gradient(rgba(242,241,236,1) 1px, transparent 1px), linear-gradient(90deg, rgba(242,241,236,1) 1px, transparent 1px)",
+							backgroundSize: "56px 56px",
+						}}
+					/>
+
+					<div className="relative mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
+						<motion.div
+							className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-paper/60 mb-6"
 							{...fadeIn}
-							transition={{ delay: 0.2 }}
 						>
-							Parlons de votre projet
+							<span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+							Disponible pour vos projets
+						</motion.div>
+						<motion.span
+							className="block font-mono text-xs uppercase tracking-wider text-petrol-light mb-4"
+							{...fadeIn}
+							transition={{ delay: 0.1 }}
+						>
+							Contact
+						</motion.span>
+						<motion.h2
+							className="font-display text-4xl sm:text-5xl text-paper mb-6"
+							style={{ textWrap: "balance" }}
+							{...fadeIn}
+							transition={{ delay: 0.15 }}
+						>
+							Parlons de votre projet.
 						</motion.h2>
 						<motion.p
-							className="mt-6 text-lg/8 text-gray-600"
+							className="text-paper/60 text-lg leading-relaxed"
 							{...fadeIn}
-							transition={{ delay: 0.4 }}
+							transition={{ delay: 0.3 }}
 						>
 							Une idée, un projet, une question technique ?
-							Décrivez-moi votre besoin — je vous réponds
-							personnellement sous 24h. Sans engagement,
-							sans jargon.
+							Décrivez-moi votre besoin - je vous réponds
+							personnellement sous 24h. Sans engagement, sans
+							jargon.
 						</motion.p>
+
 						<motion.dl
-							className="mt-10 space-y-4 text-base/7 text-gray-600"
+							className="mt-12 space-y-5"
 							{...fadeIn}
-							transition={{ delay: 0.6 }}
+							transition={{ delay: 0.45 }}
 						>
-							<div className="flex gap-x-4">
-								<dt className="flex-none">
-									<span className="sr-only">Address</span>
-									<BuildingOffice2Icon
+							<div className="flex items-center gap-4">
+								<dt>
+									<span className="sr-only">Adresse</span>
+									<Icons.MapPin
 										aria-hidden="true"
-										className="h-7 w-6 text-gray-400"
+										className="h-5 w-5 text-petrol-light"
 									/>
 								</dt>
-								<dd>
-									France
-									<br />
-									Marseille, 13013
+								<dd className="text-paper/75 text-sm">
+									Marseille, 13013 - France
 								</dd>
 							</div>
-							<div className="flex gap-x-4">
-								<dt className="flex-none">
+							<div className="flex items-center gap-4">
+								<dt>
 									<span className="sr-only">Téléphone</span>
-									<PhoneIcon
+									<Icons.Phone
 										aria-hidden="true"
-										className="h-7 w-6 text-gray-400"
+										className="h-5 w-5 text-petrol-light"
 									/>
 								</dt>
 								<dd>
 									<a
 										href="tel:+33783395103"
-										aria-label="Phone number"
+										aria-label="Téléphone"
 										rel="noopener noreferrer"
-										className="hover:text-gray-900"
+										className="text-paper/75 text-sm hover:text-paper transition-colors"
 									>
 										+33 7 83 39 51 03
 									</a>
 								</dd>
 							</div>
-							<div className="flex gap-x-4">
-								<dt className="flex-none">
+							<div className="flex items-center gap-4">
+								<dt>
 									<span className="sr-only">Email</span>
-									<EnvelopeIcon
+									<Icons.Mail
 										aria-hidden="true"
-										className="h-7 w-6 text-gray-400"
+										className="h-5 w-5 text-petrol-light"
 									/>
 								</dt>
 								<dd>
 									<a
 										href="mailto:anthony.developpeurweb@gmail.com"
-										className="hover:text-gray-900"
+										className="text-paper/75 text-sm hover:text-paper transition-colors"
 										rel="noopener noreferrer"
-										aria-label="Email address"
+										aria-label="Adresse email"
 									>
 										anthony.developpeurweb@gmail.com
 									</a>
 								</dd>
 							</div>
 						</motion.dl>
+
+						<motion.div
+							className="flex items-center gap-5 mt-10 pt-8 border-t border-paper/10"
+							{...fadeIn}
+							transition={{ delay: 0.55 }}
+						>
+							<a
+								href="https://github.com/GorskiAnthony"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="GitHub"
+								className="text-paper/60 hover:text-paper transition-colors"
+							>
+								<Icons.Github className="h-5 w-5" />
+							</a>
+							<a
+								href="https://www.linkedin.com/in/anthony-gorski/"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="LinkedIn"
+								className="text-paper/60 hover:text-paper transition-colors"
+							>
+								<Icons.Linkedin className="h-5 w-5" />
+							</a>
+						</motion.div>
 					</div>
 				</div>
+
+				{/* Right - form */}
 				<form
 					ref={form}
 					onSubmit={sendEmail}
-					className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48"
+					className="px-6 pb-24 pt-16 sm:pb-32 lg:px-12 lg:py-40"
 				>
-					<div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
-						<div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+					<div className="mx-auto max-w-xl">
+						<div className="grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2">
 							<div>
 								<label
 									htmlFor="first-name"
-									className="block text-sm/6 font-semibold text-gray-900"
+									className={labelClass}
 								>
-									Prénom
+									Prénom <span className="text-petrol">*</span>
 								</label>
-								<div className="mt-2.5">
-									<input
-										id="first-name"
-										name="first-name"
-										type="text"
-										required
-										autoComplete="given-name"
-										className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-									/>
-								</div>
+								<input
+									id="first-name"
+									name="first-name"
+									type="text"
+									required
+									autoComplete="given-name"
+									className={inputClass}
+								/>
 							</div>
 							<div>
 								<label
 									htmlFor="last-name"
-									className="block text-sm/6 font-semibold text-gray-900"
+									className={labelClass}
 								>
-									Nom
+									Nom <span className="text-petrol">*</span>
 								</label>
-								<div className="mt-2.5">
-									<input
-										id="last-name"
-										name="last-name"
-										type="text"
-										required
-										autoComplete="family-name"
-										className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-									/>
-								</div>
+								<input
+									id="last-name"
+									name="last-name"
+									type="text"
+									required
+									autoComplete="family-name"
+									className={inputClass}
+								/>
 							</div>
 							<div className="sm:col-span-2">
-								<label
-									htmlFor="email"
-									className="block text-sm/6 font-semibold text-gray-900"
-								>
-									Email
+								<label htmlFor="email" className={labelClass}>
+									Email <span className="text-petrol">*</span>
 								</label>
-								<div className="mt-2.5">
-									<input
-										id="email"
-										name="email"
-										type="email"
-										required
-										autoComplete="email"
-										className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-									/>
-								</div>
+								<input
+									id="email"
+									name="email"
+									type="email"
+									required
+									autoComplete="email"
+									className={inputClass}
+								/>
 							</div>
 							<div className="sm:col-span-2">
 								<label
 									htmlFor="phone-number"
-									className="block text-sm/6 font-semibold text-gray-900"
+									className={labelClass}
 								>
-									Téléphone
+									Téléphone{" "}
+									<span className="text-slate/50 normal-case tracking-normal">
+										(optionnel)
+									</span>
 								</label>
-								<div className="mt-2.5">
-									<input
-										id="phone-number"
-										name="phone-number"
-										type="tel"
-										autoComplete="tel"
-										className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-									/>
-								</div>
+								<input
+									id="phone-number"
+									name="phone-number"
+									type="tel"
+									autoComplete="tel"
+									className={inputClass}
+								/>
 							</div>
 							<div className="sm:col-span-2">
-								<label
-									htmlFor="message"
-									className="block text-sm/6 font-semibold text-gray-900"
-								>
-									Message
+								<label htmlFor="message" className={labelClass}>
+									Message <span className="text-petrol">*</span>
 								</label>
-								<div className="mt-2.5">
-									<textarea
-										id="message"
-										name="message"
-										rows={4}
-										required
-										className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-									/>
-								</div>
+								<textarea
+									id="message"
+									name="message"
+									rows={4}
+									required
+									className={inputClass}
+								/>
 							</div>
 						</div>
-						<div className="mt-8 flex justify-end">
+						<div className="mt-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+							<p className="text-xs text-slate leading-relaxed sm:max-w-[220px]">
+								Réponse sous 24h. Vos informations restent
+								confidentielles et ne sont jamais partagées.
+							</p>
 							<button
 								type="submit"
-								className="relative group overflow-hidden rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-3 text-center text-sm font-bold text-white shadow-md shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5 transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+								className="shrink-0 bg-ink text-paper px-6 py-3.5 font-semibold hover:bg-petrol-deep transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-petrol"
 							>
-								<span className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 ease-in-out" />
-								<span className="relative z-10">Envoyer mon message →</span>
+								Envoyer mon message →
 							</button>
 						</div>
 					</div>
