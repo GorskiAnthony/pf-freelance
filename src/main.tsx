@@ -14,6 +14,8 @@ import Cgv from "./pages/CGV.tsx";
 import { PolitiqueConfidentialite } from "./pages/PolitiqueConfidentialite.tsx";
 import Success from "./pages/Success.tsx";
 import Cancel from "./pages/Cancel.tsx";
+import Blog from "./pages/Blog.tsx";
+import BlogPost from "./pages/BlogPost.tsx";
 
 const router = createBrowserRouter([
 	{
@@ -31,6 +33,14 @@ const router = createBrowserRouter([
 			{
 				path: "/contact",
 				element: <Contact />,
+			},
+			{
+				path: "/blog",
+				element: <Blog />,
+			},
+			{
+				path: "/blog/:slug",
+				element: <BlogPost />,
 			},
 			{
 				path: "/mentions-legales",
