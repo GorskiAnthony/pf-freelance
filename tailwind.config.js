@@ -3,6 +3,22 @@ export default {
 	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 	theme: {
 		extend: {
+			colors: {
+				ink: "#171A1A",
+				paper: "#F2F1EC",
+				mist: "#E4E3DC",
+				slate: "#63665F",
+				petrol: {
+					DEFAULT: "#0C5C53",
+					deep: "#073B35",
+					light: "#2DD4BF",
+				},
+			},
+			fontFamily: {
+				display: ["Fraunces", "serif"],
+				sans: ["IBM Plex Sans", "system-ui", "sans-serif"],
+				mono: ["IBM Plex Mono", "monospace"],
+			},
 			animation: {
 				"gradient-x": "gradient-x 3s ease infinite",
 				"blob": "blob 7s infinite",

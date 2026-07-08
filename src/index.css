@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+	body {
+		@apply font-sans text-ink bg-paper;
+	}
+	h1, h2, h3 {
+		@apply font-display;
+	}
+	::selection {
+		background-color: #0C5C53;
+		color: #F2F1EC;
+	}
+}
+
 .animation-delay-2000 {
 	animation-delay: 2s;
 }
