@@ -3,26 +3,65 @@ export default function ConditionsVente() {
 		{
 			title: "1. Objet",
 			content:
-				"Les présentes Conditions Générales de Vente (CGV) ont pour objet de définir les modalités de vente des prestations proposées par Anthony Gorski, développeur web freelance, sur le site www.agorski.dev : Création de sites web (abonnements mensuels) et Cours particuliers en développement web.",
+				"Les présentes Conditions Générales de Vente (CGV) ont pour objet de définir les modalités de vente des prestations proposées par Anthony Gorski, développeur web freelance, sur le site www.agorski.dev : création de sites web (paiement unique), hébergement & maintenance (abonnement), services à la carte et cours particuliers en développement web.",
 		},
 		{
 			title: "2. Prestations",
 			content: (
 				<>
-					<p className="mb-2 font-semibold text-ink">Création de site web</p>
+					<p className="mb-2 font-semibold text-ink">
+						Création de site web (paiement unique)
+					</p>
 					<ul className="list-disc list-inside mb-4 text-slate">
 						<li>
-							<strong>Freelancer</strong> : 59€/mois – Site
-							vitrine 1 page, responsive, support sous 48h
+							<strong>Vitrine</strong> : 690€ – Site one-page
+							professionnel, responsive, SEO de base, mise en
+							ligne incluse
 						</li>
 						<li>
-							<strong>Startup</strong> : 99€/mois – Site jusqu'à 5
-							pages, design personnalisé, support sous 24h
+							<strong>Multi-pages</strong> : 1 490€ – Site
+							jusqu'à 5 sections, design sur mesure, SEO avancé
 						</li>
 						<li>
-							<strong>Enterprise</strong> : Sur devis –
-							Application web sur mesure, support 24/7, SEO
-							avancé, maintenance incluse
+							<strong>Sur mesure</strong> : Sur devis gratuit –
+							Application web sur mesure, architecture et
+							conseil technique inclus
+						</li>
+					</ul>
+					<p className="mb-2 font-semibold text-ink">
+						Hébergement &amp; maintenance (abonnement mensuel ou
+						annuel, sans engagement)
+					</p>
+					<ul className="list-disc list-inside mb-4 text-slate">
+						<li>
+							<strong>Essentiel</strong> : 19€/mois (190€/an) –
+							hébergement sécurisé, sauvegardes automatiques,
+							supervision, support sous 48h
+						</li>
+						<li>
+							<strong>Confort</strong> : 39€/mois (390€/an) –
+							Essentiel + mises à jour, modifications mineures
+							incluses, support prioritaire sous 24h
+						</li>
+					</ul>
+					<p className="mb-2 font-semibold text-ink">
+						Services à la carte
+					</p>
+					<ul className="list-disc list-inside mb-4 text-slate">
+						<li>
+							<strong>Développement à la carte</strong> : à
+							partir de 450€, sur devis gratuit
+						</li>
+						<li>
+							<strong>Audit SEO</strong> : 390€, paiement unique
+						</li>
+						<li>
+							<strong>Maintenance seule</strong> : 35€/mois,
+							sans engagement (site hébergé ailleurs)
+						</li>
+						<li>
+							<strong>Conseil &amp; Accompagnement</strong> :
+							110€/heure
 						</li>
 					</ul>
 					<p className="mb-2 font-semibold text-ink">Cours particuliers</p>
@@ -43,22 +82,28 @@ export default function ConditionsVente() {
 			content: (
 				<>
 					<p className="mb-3 text-slate">
-						Les offres disponibles sur www.agorski.dev sont à prix fixes et
-						clairement détaillées. Aucun devis préalable n'est émis pour ces
-						prestations : la commande est validée par le paiement en ligne,
-						effectué via la plateforme sécurisée Stripe. La prestation débute
-						une fois le paiement confirmé.
+						Les offres à prix fixe disponibles sur www.agorski.dev (Vitrine,
+						Multi-pages, Hébergement Essentiel et Confort, Audit SEO,
+						Maintenance seule, Conseil &amp; Accompagnement, Cours
+						particuliers) sont clairement détaillées et ne nécessitent
+						aucun devis préalable : la commande est validée par le paiement
+						en ligne, effectué via la plateforme sécurisée Stripe. La
+						prestation débute une fois le paiement confirmé.
 					</p>
 					<p className="mb-3 text-slate">
-						Pour la formule <strong>Enterprise (Sur mesure)</strong>, un
-						échange préalable par email permet de définir le périmètre exact
-						de la mission avant tout règlement.
+						Pour les offres <strong>Sur mesure</strong> et{" "}
+						<strong>Développement à la carte</strong>, un devis gratuit est
+						établi après échange sur le périmètre exact du besoin, avec une
+						réponse sous 48h. Le règlement intervient à la validation du
+						devis, avant le démarrage de la prestation.
 					</p>
 					<p className="mb-3 text-slate">
-						Pour les <strong>abonnements mensuels</strong>, le paiement est
-						prélevé automatiquement à chaque date d'anniversaire du contrat.
-						Le client peut résilier à tout moment, la résiliation prenant
-						effet à la fin de la période en cours déjà réglée.
+						Pour les <strong>abonnements</strong> (Hébergement, Maintenance
+						seule), le paiement est prélevé automatiquement, mensuellement
+						ou annuellement selon la formule choisie, à chaque date
+						d'anniversaire du contrat. Le client peut résilier à tout
+						moment, la résiliation prenant effet à la fin de la période en
+						cours déjà réglée.
 					</p>
 					<p className="mb-3 text-slate">
 						Pour les <strong>cours particuliers</strong>, le paiement est
@@ -157,7 +202,7 @@ export default function ConditionsVente() {
 				Conditions Générales de Vente (CGV)
 			</h1>
 			<p className="font-mono text-xs uppercase tracking-wider text-slate mb-12">
-				Dernière mise à jour : 4 juin 2026
+				Dernière mise à jour : 13 juillet 2026
 			</p>
 
 			{sections.map((section, index) => (
