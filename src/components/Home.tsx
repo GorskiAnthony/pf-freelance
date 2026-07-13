@@ -1,50 +1,53 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Icons, IconsSkills } from "../helpers/Icon";
-import { payer } from "../utils/payer";
+import { Icons } from "../helpers/Icon";
+import { posts } from "../content/posts";
 
 const getExp = (since: number) => new Date().getFullYear() - since;
 
-const techGroups = [
+const formatDate = (iso: string) =>
+	new Intl.DateTimeFormat("fr-FR", {
+		day: "numeric",
+		month: "long",
+		year: "numeric",
+	}).format(new Date(iso));
+
+const process = [
 	{
-		label: "Frontend",
-		items: [
-			{ name: "JavaScript", icon: IconsSkills.Javascript, since: 2016 },
-			{ name: "TypeScript", icon: IconsSkills.Typescript, since: 2020 },
-			{ name: "React", icon: IconsSkills.React, since: 2018 },
-			{ name: "Angular", icon: IconsSkills.Angular, since: 2021 },
-			{ name: "Tailwind", icon: IconsSkills.Tailwind, since: 2020 },
-		],
+		step: "01",
+		title: "Prise de contact",
+		description:
+			"Un échange rapide (visio ou téléphone) pour comprendre votre projet, vos objectifs et vos contraintes.",
 	},
 	{
-		label: "Backend",
-		items: [
-			{ name: "Node.js", icon: IconsSkills.Node, since: 2018 },
-			{ name: "Express", icon: IconsSkills.Express, since: 2018 },
-			{ name: "Java", icon: IconsSkills.Java, since: 2021 },
-			{ name: "Spring Boot", icon: IconsSkills.SpringBoot, since: 2021 },
-			{ name: "Symfony", icon: IconsSkills.Symfony, since: 2020 },
-		],
+		step: "02",
+		title: "Analyse des besoins",
+		description:
+			"Je cadre précisément le périmètre - fonctionnalités, budget, délais. Vous recevez un devis clair sous 48h.",
 	},
 	{
-		label: "Données",
-		items: [
-			{ name: "PostgreSQL", icon: IconsSkills.PostgreSQL, since: 2021 },
-			{ name: "MongoDB", icon: IconsSkills.MongoDB, since: 2020 },
-			{ name: "Prisma", icon: IconsSkills.Prisma, since: 2021 },
-		],
+		step: "03",
+		title: "Conception & maquettes",
+		description:
+			"Wireframes et choix visuels validés avec vous avant que la moindre ligne de code ne soit écrite.",
 	},
 	{
-		label: "Infra & Déploiement",
-		items: [
-			{ name: "Docker", icon: IconsSkills.Docker, since: 2020 },
-			{
-				name: "GitHub Actions",
-				icon: IconsSkills.GithubActions,
-				since: 2021,
-			},
-			{ name: "Vercel", icon: IconsSkills.Vercel, since: 2021 },
-		],
+		step: "04",
+		title: "Développement",
+		description:
+			"Je construis votre projet par étapes, avec des points réguliers pour ajuster le tir en cours de route.",
+	},
+	{
+		step: "05",
+		title: "Tests & mise en ligne",
+		description:
+			"Vérifications complètes puis mise en production - votre site est en ligne, fonctionnel et sécurisé.",
+	},
+	{
+		step: "06",
+		title: "Suivi & évolutions",
+		description:
+			"Je reste disponible après la livraison pour le support, les évolutions et les questions du quotidien.",
 	},
 ];
 
@@ -54,30 +57,34 @@ const services = [
 		title: "Développement & Déploiement",
 		description:
 			"De l'idée à la mise en production. Je conçois des applications robustes, rapides et prêtes à scaler dès le premier jour.",
+		price: "À partir de 450€",
 	},
 	{
 		icon: Icons.Search,
 		title: "SEO & Visibilité",
 		description:
 			"Vos clients vous cherchent sur Google - soyez là où ils regardent. J'optimise votre site pour attirer un trafic qualifié.",
+		price: "Audit à partir de 390€",
 	},
 	{
 		icon: Icons.WrenchIcon,
 		title: "Maintenance & Support",
 		description:
 			"Votre site tourne, ça ne suffit pas. Je veille, je corrige, je mets à jour - pour que vous n'ayez jamais à vous en préoccuper.",
+		price: "À partir de 35€/mois",
 	},
 	{
 		icon: Icons.Brain,
 		title: "Conseil & Accompagnement",
 		description:
 			"Pas sûr de la bonne techno ? Besoin d'un œil externe ? Je vous aide à prendre les bonnes décisions, sans jargon inutile.",
+		price: "110€/heure",
 	},
 ];
 
 export default function Home() {
-	const totalTech = techGroups.reduce((n, g) => n + g.items.length, 0);
 	const yearsExp = getExp(2016);
+	const latestPosts = posts.slice(0, 3);
 
 	return (
 		<div className="pt-[72px] bg-paper">
@@ -180,10 +187,10 @@ export default function Home() {
 							</div>
 							<div className="px-4 py-4 border-r border-paper/15">
 								<div className="text-2xl text-paper tabular-nums">
-									{totalTech}
+									{posts.length}+
 								</div>
 								<div className="text-[11px] text-paper/50 uppercase tracking-wider mt-1">
-									Technos
+									Articles
 								</div>
 							</div>
 							<div className="px-4 py-4">
@@ -237,159 +244,133 @@ export default function Home() {
 								<h3 className="font-display text-xl text-ink mb-2.5">
 									{s.title}
 								</h3>
-								<p className="text-slate leading-relaxed text-[15px]">
+								<p className="text-slate leading-relaxed text-[15px] mb-4">
 									{s.description}
 								</p>
+								<div className="flex items-center justify-between gap-3">
+									<span className="font-mono text-xs uppercase tracking-wider text-petrol">
+										{s.price}
+									</span>
+									<Link
+										to="/pricing"
+										className="font-mono text-xs uppercase tracking-wider text-slate hover:text-petrol transition-colors"
+									>
+										Voir le détail →
+									</Link>
+								</div>
 							</motion.div>
 						))}
 					</div>
 				</div>
 			</section>
 
-			{/* ─── TECHNOLOGIES ─── */}
-			<section className="border-t border-mist bg-white">
-				<div className="max-w-6xl mx-auto px-5 sm:px-8 py-24">
+			{/* ─── PROCESS ─── */}
+			<section className="border-t border-mist">
+				<div className="max-w-4xl mx-auto px-5 sm:px-8 py-24">
 					<div className="max-w-xl mb-16">
 						<span className="font-mono text-xs uppercase tracking-wider text-petrol block mb-3">
-							Stack technique
+							Comment ça marche
 						</span>
 						<h2 className="font-display text-3xl sm:text-4xl text-ink mb-4">
-							Des outils maîtrisés en conditions réelles.
+							De la prise de contact à la mise en ligne.
 						</h2>
 						<p className="text-slate leading-relaxed">
-							Pas sur des tutoriels YouTube - en production, sur
-							de vrais projets clients.
+							Un déroulé clair, à chaque étape vous savez où vous
+							en êtes.
 						</p>
 					</div>
 
-					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-12">
-						{techGroups.map((group, gi) => (
+					<div>
+						{process.map((p, i) => (
 							<motion.div
-								key={group.label}
-								initial={{ opacity: 0, y: 16 }}
+								key={p.step}
+								className="relative flex gap-6 sm:gap-10"
+								initial={{ opacity: 0, y: 20 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true }}
-								transition={{ delay: gi * 0.06, duration: 0.5 }}
+								transition={{ delay: i * 0.08, duration: 0.5 }}
 							>
-								<h3 className="font-mono text-xs uppercase tracking-wider text-slate border-b border-mist pb-3 mb-4">
-									{group.label}
-								</h3>
-								<ul className="space-y-3.5">
-									{group.items.map((tech) => (
-										<li
-											key={tech.name}
-											className="flex items-center justify-between gap-3"
-										>
-											<span className="flex items-center gap-2.5 text-ink text-sm font-medium">
-												<tech.icon className="w-4 h-4 text-slate shrink-0" />
-												{tech.name}
-											</span>
-											<span className="font-mono text-xs text-slate/70 tabular-nums shrink-0">
-												{getExp(tech.since)}+ ans
-											</span>
-										</li>
-									))}
-								</ul>
+								<div className="flex flex-col items-center shrink-0">
+									<div className="w-11 h-11 rounded-full border-2 border-petrol bg-paper flex items-center justify-center font-mono text-sm text-petrol">
+										{p.step}
+									</div>
+									{i < process.length - 1 && (
+										<div className="w-px flex-1 bg-mist my-2" />
+									)}
+								</div>
+								<div className="pb-12">
+									<h3 className="font-display text-xl text-ink mb-2">
+										{p.title}
+									</h3>
+									<p className="text-slate leading-relaxed text-[15px] max-w-lg">
+										{p.description}
+									</p>
+								</div>
 							</motion.div>
 						))}
 					</div>
 				</div>
 			</section>
 
-			{/* ─── COURS PARTICULIERS ─── */}
-			<section className="border-t border-mist">
+			{/* ─── BLOG ─── */}
+			<section className="border-t border-mist bg-white">
 				<div className="max-w-6xl mx-auto px-5 sm:px-8 py-24">
-					<div className="max-w-xl mb-16">
-						<span className="font-mono text-xs uppercase tracking-wider text-petrol block mb-3">
-							Formation
-						</span>
-						<h2 className="font-display text-3xl sm:text-4xl text-ink mb-4">
-							Cours particuliers, pour passer un cap concret.
-						</h2>
-						<p className="text-slate leading-relaxed max-w-2xl">
-							Que vous débutiez ou cherchiez à progresser, on
-							travaille sur de vrais projets - pas des slides
-							PowerPoint.
-						</p>
+					<div className="flex flex-wrap items-end justify-between gap-6 mb-16">
+						<div className="max-w-xl">
+							<span className="font-mono text-xs uppercase tracking-wider text-petrol block mb-3">
+								Veille & retours d'expérience
+							</span>
+							<h2 className="font-display text-3xl sm:text-4xl text-ink mb-4">
+								Ce que je retiens de l'actualité tech.
+							</h2>
+							<p className="text-slate leading-relaxed">
+								IA, DevOps, web - sans reformulation de
+								communiqués de presse.
+							</p>
+						</div>
+						<Link
+							to="/blog"
+							className="font-mono text-xs uppercase tracking-wider text-slate hover:text-petrol transition-colors shrink-0"
+						>
+							Voir tous les articles →
+						</Link>
 					</div>
 
-					<div className="grid grid-cols-1 md:grid-cols-2 border border-mist">
-						{/* Individuel */}
-						<div className="p-8 md:p-10 border-b md:border-b-0 md:border-r border-mist">
-							<span className="font-mono text-xs uppercase tracking-wider text-slate">
-								À l'heure
-							</span>
-							<h3 className="font-display text-2xl text-ink mt-2 mb-4">
-								Cours individuel
-							</h3>
-							<div className="flex items-baseline gap-1.5 mb-5">
-								<span className="font-display text-4xl text-ink tabular-nums">
-									40€
-								</span>
-								<span className="text-slate text-sm">
-									/ heure
-								</span>
-							</div>
-							<p className="text-slate text-sm leading-relaxed mb-8">
-								Concentré sur ce qui vous bloque vraiment, à
-								votre rythme.
-							</p>
-							<button
-								onClick={() => payer("cours_1h")}
-								className="w-full bg-ink text-paper px-6 py-3.5 font-semibold hover:bg-petrol-deep transition-colors duration-200"
+					<div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-mist">
+						{latestPosts.map((post, i) => (
+							<motion.div
+								key={post.slug}
+								initial={{ opacity: 0, y: 20 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								viewport={{ once: true }}
+								transition={{ delay: i * 0.08, duration: 0.5 }}
 							>
-								Réserver ma première heure →
-							</button>
-						</div>
-
-						{/* Pack 5h */}
-						<div className="relative p-8 md:p-10 bg-petrol/5">
-							<span className="absolute top-0 right-0 font-mono text-[11px] uppercase tracking-wider bg-petrol text-paper px-3 py-1.5">
-								Meilleure offre
-							</span>
-							<span className="font-mono text-xs uppercase tracking-wider text-petrol">
-								Pack 5 heures
-							</span>
-							<h3 className="font-display text-2xl text-ink mt-2 mb-4">
-								Pack 5 cours
-							</h3>
-							<div className="flex items-baseline gap-1.5 mb-5">
-								<span className="font-display text-4xl text-ink tabular-nums">
-									150€
-								</span>
-								<span className="text-slate text-sm">
-									/ 5 heures
-								</span>
-							</div>
-							<p className="text-slate text-sm leading-relaxed mb-8">
-								5h pour aller de l'idée au projet concret - et
-								50€ économisés.
-							</p>
-							<button
-								onClick={() => payer("cours_5h")}
-								className="w-full bg-petrol text-paper px-6 py-3.5 font-semibold hover:bg-petrol-deep transition-colors duration-200"
-							>
-								Réserver le pack 5h →
-							</button>
-						</div>
-					</div>
-
-					<ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 mt-10">
-						{[
-							"Sessions 100% dédiées à vos besoins",
-							"Programme construit autour de votre projet réel",
-							"Vous codez dès la première heure - pas de théorie inutile",
-							"Feedback direct et suivi entre les sessions",
-						].map((item) => (
-							<li
-								key={item}
-								className="flex items-start gap-2.5 text-slate text-sm"
-							>
-								<Icons.BadgeCheck className="w-4 h-4 text-petrol shrink-0 mt-0.5" />
-								{item}
-							</li>
+								<Link
+									to={`/blog/${post.slug}`}
+									className="group flex flex-col h-full border-r border-b border-mist p-8"
+								>
+									<div className="flex items-center gap-3 font-mono text-xs uppercase tracking-wider mb-4">
+										<span className="text-petrol">
+											{post.category}
+										</span>
+										<span className="text-slate/60">
+											{formatDate(post.date)}
+										</span>
+									</div>
+									<h3 className="font-display text-xl text-ink mb-2.5 group-hover:text-petrol transition-colors duration-200">
+										{post.title}
+									</h3>
+									<p className="text-slate leading-relaxed text-[15px] mb-4 flex-1">
+										{post.excerpt}
+									</p>
+									<span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-ink group-hover:text-petrol transition-colors duration-200">
+										Lire l'article
+										<Icons.ArrowUpRight className="w-3.5 h-3.5" />
+									</span>
+								</Link>
+							</motion.div>
 						))}
-					</ul>
+					</div>
 				</div>
 			</section>
 		</div>

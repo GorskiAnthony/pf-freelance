@@ -91,8 +91,8 @@ export default function Contact() {
 						>
 							Une idée, un projet, une question technique ?
 							Décrivez-moi votre besoin - je vous réponds
-							personnellement sous 24h. Sans engagement, sans
-							jargon.
+							personnellement sous 24h, avec un devis gratuit et
+							sans engagement.
 						</motion.p>
 
 						<motion.dl

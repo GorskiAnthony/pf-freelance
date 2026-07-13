@@ -64,6 +64,54 @@ const projects = [
 	},
 ];
 
+const trainingProjects = [
+	{
+		name: "Device34",
+		stack: "Angular 20 · Spring Boot 3.2 · PostgreSQL · Docker",
+		url: "https://github.com/anthony-openclassroom/projet-6-device34",
+	},
+	{
+		name: "Your Car Your Way",
+		stack: "Angular SSR · Spring Boot · WebSocket/STOMP",
+		url: "https://github.com/anthony-openclassroom/p10-yourcaryourway",
+	},
+	{
+		name: "LiVrai",
+		stack: "Audit technique · Architecture logicielle",
+		url: "https://github.com/anthony-openclassroom/projet-9-livrai",
+	},
+	{
+		name: "Catasterre",
+		stack: "Audit technique · Accessibilité RGAA · Docker/CI-CD",
+		url: "https://github.com/anthony-openclassroom/projet_8_catasterre",
+	},
+	{
+		name: "MicroCRM",
+		stack: "Angular · CI/CD",
+		url: "https://github.com/anthony-openclassroom/projet-7_microcrm",
+	},
+	{
+		name: "ChaTop",
+		stack: "Angular · Spring Boot · JWT",
+		url: "https://github.com/anthony-openclassroom/projet_3_chatop",
+	},
+	{
+		name: "Yoga App",
+		stack: "Angular 19 · Spring Boot 3 · MySQL",
+		url: "https://github.com/anthony-openclassroom/projet4_yoga",
+	},
+	{
+		name: "Olympic Games Dashboard",
+		stack: "Angular",
+		url: "https://github.com/anthony-openclassroom/projet_2_telesport",
+	},
+	{
+		name: "ELK Stack Demo",
+		stack: "Angular · Spring Boot · ELK",
+		url: "https://github.com/anthony-openclassroom/learn-elk",
+	},
+];
+
 const education = [
 	{
 		school: "OpenClassrooms",
@@ -448,6 +496,57 @@ export default function About() {
 									{e.date}
 								</p>
 							</motion.div>
+						))}
+					</div>
+				</div>
+			</section>
+
+			{/* Training projects */}
+			<section className="border-t border-mist">
+				<div className="max-w-6xl mx-auto px-5 sm:px-8 py-20">
+					<div className="flex flex-wrap items-end justify-between gap-4 mb-14">
+						<div className="max-w-xl">
+							<span className="font-mono text-xs uppercase tracking-wider text-petrol block mb-3">
+								Certification OpenClassrooms
+							</span>
+							<h2 className="font-display text-2xl sm:text-3xl text-ink">
+								Projets de formation
+							</h2>
+						</div>
+						<a
+							href="https://github.com/anthony-openclassroom"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="flex items-center gap-2 text-sm text-slate hover:text-petrol transition-colors"
+						>
+							<Icons.Github className="w-4 h-4" />
+							Voir tous les repos
+						</a>
+					</div>
+
+					<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 border-t border-l border-mist">
+						{trainingProjects.map((p, i) => (
+							<motion.a
+								key={p.name}
+								href={p.url}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="group border-r border-b border-mist p-6"
+								initial={{ opacity: 0, y: 16 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								viewport={{ once: true }}
+								transition={{ delay: i * 0.04, duration: 0.4 }}
+							>
+								<div className="flex items-start justify-between gap-2 mb-1.5">
+									<h3 className="font-display text-lg text-ink group-hover:text-petrol transition-colors duration-200">
+										{p.name}
+									</h3>
+									<Icons.ArrowUpRight className="w-3.5 h-3.5 text-slate/50 group-hover:text-petrol transition-colors duration-200 shrink-0 mt-1" />
+								</div>
+								<p className="font-mono text-xs uppercase tracking-wider text-slate/60">
+									{p.stack}
+								</p>
+							</motion.a>
 						))}
 					</div>
 				</div>
