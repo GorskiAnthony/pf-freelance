@@ -27,7 +27,7 @@ const Navbar = () => {
 						to="/"
 						className="flex items-center gap-2.5 group"
 					>
-						<img src="assets/logo.png" alt="Logo" className="w-8 h-8" />
+						<img src="/assets/logo.png" alt="Logo" className="w-8 h-8" />
 						<span className="font-display text-xl text-ink tracking-tight group-hover:text-petrol transition-colors duration-200">
 							Anthony Gorski
 						</span>

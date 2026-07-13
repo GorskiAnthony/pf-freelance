@@ -164,7 +164,7 @@ export default function Home() {
 					>
 						<div className="border border-paper/15">
 							<img
-								src="assets/PixArt.png"
+								src="/assets/PixArt.png"
 								alt="Anthony Gorski"
 								className="w-full aspect-[4/5] object-cover grayscale-[15%]"
 							/>
