@@ -58,6 +58,7 @@ const services = [
 		description:
 			"De l'idée à la mise en production. Je conçois des applications robustes, rapides et prêtes à scaler dès le premier jour.",
 		price: "À partir de 450€",
+		slug: "developpement-a-la-carte",
 	},
 	{
 		icon: Icons.Search,
@@ -65,6 +66,7 @@ const services = [
 		description:
 			"Vos clients vous cherchent sur Google - soyez là où ils regardent. J'optimise votre site pour attirer un trafic qualifié.",
 		price: "Audit à partir de 390€",
+		slug: "audit-seo",
 	},
 	{
 		icon: Icons.WrenchIcon,
@@ -72,6 +74,7 @@ const services = [
 		description:
 			"Votre site tourne, ça ne suffit pas. Je veille, je corrige, je mets à jour - pour que vous n'ayez jamais à vous en préoccuper.",
 		price: "À partir de 35€/mois",
+		slug: "maintenance-seule",
 	},
 	{
 		icon: Icons.Brain,
@@ -79,6 +82,7 @@ const services = [
 		description:
 			"Pas sûr de la bonne techno ? Besoin d'un œil externe ? Je vous aide à prendre les bonnes décisions, sans jargon inutile.",
 		price: "110€/heure",
+		slug: "conseil-accompagnement",
 	},
 ];
 
@@ -252,7 +256,7 @@ export default function Home() {
 										{s.price}
 									</span>
 									<Link
-										to="/pricing"
+										to={`/services/${s.slug}`}
 										className="font-mono text-xs uppercase tracking-wider text-slate hover:text-petrol transition-colors"
 									>
 										Voir le détail →

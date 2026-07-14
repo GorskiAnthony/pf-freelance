@@ -17,6 +17,7 @@ import Cancel from "./pages/Cancel.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
 import About from "./pages/About.tsx";
+import ServiceDetail from "./pages/ServiceDetail.tsx";
 
 const router = createBrowserRouter([
 	{
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
 			{
 				path: "/pricing",
 				element: <Pricing />,
+			},
+			{
+				path: "/services/:slug",
+				element: <ServiceDetail />,
 			},
 			{
 				path: "/contact",

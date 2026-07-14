@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Radio, RadioGroup } from "@headlessui/react";
 import { Icons } from "../helpers/Icon";
 import { payer } from "../utils/payer";
+import { alaCarteServices } from "../content/services";
 import clsx from "clsx";
 
 const frequencies: {
@@ -127,49 +129,6 @@ const hostingPlans = [
 	},
 ];
 
-const alaCarteServices = [
-	{
-		icon: Icons.Rocket,
-		name: "Développement à la carte",
-		description:
-			"Une fonctionnalité, une intégration ou une refonte partielle - sans repartir sur un forfait complet.",
-		price: "À partir de 450€",
-		priceNote: "devis gratuit, réponse sous 48h",
-		cta: "Décrire mon besoin",
-		serviceId: null,
-	},
-	{
-		icon: Icons.Search,
-		name: "Audit SEO",
-		description:
-			"Un audit complet de votre référencement, avec un plan d'action clair et priorisé.",
-		price: "390€",
-		priceNote: "paiement unique",
-		cta: "Commander mon audit",
-		serviceId: "service_audit_seo",
-	},
-	{
-		icon: Icons.WrenchIcon,
-		name: "Maintenance seule",
-		description:
-			"Votre site est hébergé ailleurs ? Je m'occupe des mises à jour, petites modifications et du support.",
-		price: "35€",
-		priceNote: "/mois, sans engagement",
-		cta: "S'abonner",
-		serviceId: "service_maintenance_solo_monthly",
-	},
-	{
-		icon: Icons.Brain,
-		name: "Conseil & Accompagnement",
-		description:
-			"Une session pour faire le point sur vos choix techniques, votre architecture ou votre roadmap.",
-		price: "110€",
-		priceNote: "/heure",
-		cta: "Réserver une session",
-		serviceId: "service_conseil_1h",
-	},
-];
-
 const trustBadges = [
 	{ icon: Icons.BadgeCheck, text: "Devis gratuit, sans engagement" },
 	{ icon: Icons.Lock, text: "Paiement sécurisé Stripe" },
@@ -182,6 +141,7 @@ const trustBadges = [
 ];
 
 export default function Pricing() {
+	const navigate = useNavigate();
 	const [frequency, setFrequency] = useState<(typeof frequencies)[0]>(
 		frequencies[0],
 	);
@@ -354,7 +314,7 @@ export default function Pricing() {
 									if (offer.serviceId) {
 										payer(offer.serviceId);
 									} else {
-										window.location.href = "/contact";
+										navigate("/contact");
 									}
 								}}
 								className={clsx(
@@ -412,7 +372,7 @@ export default function Pricing() {
 					<div className="grid grid-cols-1 md:grid-cols-2 border-t border-l border-mist">
 						{alaCarteServices.map((service, i) => (
 							<motion.div
-								key={service.name}
+								key={service.slug}
 								className="flex flex-col border-r border-b border-mist p-8"
 								initial={{ opacity: 0, y: 20 }}
 								whileInView={{ opacity: 1, y: 0 }}
@@ -439,18 +399,12 @@ export default function Pricing() {
 										{service.priceNote}
 									</p>
 								</div>
-								<button
-									onClick={() => {
-										if (service.serviceId) {
-											payer(service.serviceId);
-										} else {
-											window.location.href = "/contact";
-										}
-									}}
-									className="w-full bg-ink text-paper px-4 py-3 text-center text-sm font-semibold hover:bg-petrol-deep transition-colors duration-200"
+								<Link
+									to={`/services/${service.slug}`}
+									className="block w-full bg-ink text-paper px-4 py-3 text-center text-sm font-semibold hover:bg-petrol-deep transition-colors duration-200"
 								>
-									{service.cta} →
-								</button>
+									Voir le détail →
+								</Link>
 							</motion.div>
 						))}
 					</div>
